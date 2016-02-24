@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="br.eng.crisjr.failproof">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/br.eng.crisjr.failproof.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
