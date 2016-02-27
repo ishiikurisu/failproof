@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
+import br.eng.crisjr.failproof.android.controller.Checklists;
 import br.eng.crisjr.failproof.web;
 
 public class MainActivity extends Activity {
     private final String SOURCE = "http://failproofchecklist.tumblr.com";
+    private Checklists controller = new Checklists();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,11 @@ public class MainActivity extends Activity {
         }
 
         protected void onPostExecute(String[] result) {
-            updateLists(result);
+            for (String it: result) {
+                controller.addChecklist(it);
+            }
+
+            updateLists(controller.getStuff());
         }
     }
 
