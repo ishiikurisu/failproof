@@ -29,9 +29,8 @@
       (recur (first change) (rest change) (str piggy coin "\n")))))
 
 (defn extract
-  "Turns a string of raw html data into an array of strings.
-  The first string is the list title; while the rest is the
-  list's content"
+  "Turns a string of raw html data into a LF-separated string.
+  The first line is the list title; while the rest is the list's content"
   [stuff]
   (->> stuff
        string/split-lines

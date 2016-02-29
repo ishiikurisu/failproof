@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 
         @Override
         protected String[] doInBackground(String... params) {
-            return web.process(params[0]);
+            return web.getLinks(params[0]);
         }
 
         protected void onPostExecute(String[] result) {
