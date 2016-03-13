@@ -1,44 +1,53 @@
 package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import br.eng.crisjr.failproof.android.controller.Checklists;
-import br.eng.crisjr.failproof.web;
+import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
+import br.eng.crisjr.failproof.android.model.Constants;
+import br.eng.crisjr.failproof.android.view.FailproofActivity;
 
-public class MainActivity extends Activity {
-    private final String SOURCE = "http://failproofchecklist.tumblr.com";
+public class MainActivity extends FailproofActivity {
     private Checklists controller = new Checklists();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        new DatabaseAccess().execute(SOURCE);
+        DatabaseAccess access = new DatabaseAccess();
+        access.setMother(this);
+        access.execute(Constants.SOURCE);
     }
 
-    private class DatabaseAccess extends AsyncTask<String, Void, String[]> {
+    public void receiveLists(String[] result) {
+        LinearLayout layoutLists = (LinearLayout) findViewById(R.id.layoutLists);
 
-        @Override
-        protected String[] doInBackground(String... params) {
-            return web.getLinks(params[0]);
-        }
+        layoutLists.removeAllViews();
+        for (String it: result) { controller.addChecklist(it); }
+        for (String it: controller.getStuff()) {
+            Button button = new Button(getApplicationContext());
+            String target = controller.query(it)[0];
 
-        protected void onPostExecute(String[] result) {
-            for (String it: result) {
-                controller.addChecklist(it);
-            }
+            button.setText(it);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openPage(target);
+                }
+            });
 
-            updateLists(controller.getStuff());
+            layoutLists.addView(button);
         }
     }
 
-    private void updateLists(String[] lists) {
-        TextView tv = (TextView) findViewById(R.id.textEmpty);
-        tv.setText("");
-        for (String it: lists) {
-            tv.setText(tv.getText() + it + "\n");
-        }
+    public void openPage(String target) {
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("target", target);
+        startActivityForResult(intent, 0);
     }
 }

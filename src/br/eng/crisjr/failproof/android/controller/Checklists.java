@@ -1,7 +1,6 @@
 package br.eng.crisjr.failproof.android.controller;
 
 import br.eng.crisjr.failproof.android.model.Checklist;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -29,5 +28,9 @@ public class Checklists {
         }
 
         return outlet;
+    }
+
+    public String[] query(String inlet) {
+        return table.get(inlet).getStuff();
     }
 }

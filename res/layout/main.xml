@@ -9,12 +9,18 @@
               android:text="Failproof Checklists"
               android:textSize="25sp"/>
     <ScrollView android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-        <TextView android:layout_gravity="center"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Now loading..."
-                  android:id="@+id/textEmpty"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollLists">
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:orientation="vertical"
+                      android:id="@+id/layoutLists">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:text="Now loading.."
+                      android:id="@+id/textEmpty"/>
+        </LinearLayout>>
     </ScrollView>
 </LinearLayout>
 
