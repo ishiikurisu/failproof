@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import br.eng.crisjr.failproof.android.controller.AccessResultant;
 import br.eng.crisjr.failproof.android.controller.Checklists;
 import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
 import br.eng.crisjr.failproof.android.model.Constants;
-import br.eng.crisjr.failproof.android.view.FailproofActivity;
 
-public class MainActivity extends FailproofActivity {
+public class MainActivity extends Activity implements AccessResultant {
     private Checklists controller = new Checklists();
 
     @Override
@@ -28,22 +28,27 @@ public class MainActivity extends FailproofActivity {
         LinearLayout layoutLists = (LinearLayout) findViewById(R.id.layoutLists);
 
         layoutLists.removeAllViews();
-        for (String it: result) { controller.addChecklist(it); }
-        for (String it: controller.getStuff()) {
-            Button button = new Button(getApplicationContext());
-            String target = controller.query(it)[0];
-
-            button.setText(it);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openPage(target);
-                }
-            });
-
-            layoutLists.addView(button);
-        }
+        for (String it: result)
+            controller.addChecklist(it);
+        for (String it: controller.getStuff())
+            layoutLists.addView(createButtonForTarget(it));
     }
+
+    private Button createButtonForTarget(String it) {
+        Button button = new Button(getApplicationContext());
+        String target = controller.query(it)[0];
+
+        button.setText(it);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPage(target);
+            }
+        });
+
+        return button;
+    }
+
 
     public void openPage(String target) {
         Intent intent = new Intent(this, ListActivity.class);

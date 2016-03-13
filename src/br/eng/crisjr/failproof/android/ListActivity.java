@@ -1,15 +1,18 @@
 package br.eng.crisjr.failproof.android;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import br.eng.crisjr.failproof.android.controller.AccessResultant;
 import br.eng.crisjr.failproof.android.controller.Checklists;
 import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
-import br.eng.crisjr.failproof.android.view.FailproofActivity;
+import br.eng.crisjr.failproof.android.model.Checklist;
 
 /**
  * Page describing a checklist
  */
-public class ListActivity extends FailproofActivity {
+public class ListActivity extends Activity implements AccessResultant {
     private Checklists controller = new Checklists();
 
     @Override
@@ -26,8 +29,14 @@ public class ListActivity extends FailproofActivity {
 
     @Override
     public void receiveLists(String[] result) {
-        for (String it: result) {
-            controller.addChecklist(it);
+        Checklist checklist = new Checklist(result[0]);
+        TextView textTitle = (TextView) findViewById(R.id.textTitle);
+        TextView textList = (TextView) findViewById(R.id.textChecklist);
+
+        textTitle.setText(checklist.getName());
+        textList.setText("");
+        for (String item: checklist.getStuff()) {
+            textList.setText(textList.getText() + item + "\n");
         }
     }
 

@@ -1,7 +1,6 @@
 package br.eng.crisjr.failproof.android.controller;
 
 import android.os.AsyncTask;
-import br.eng.crisjr.failproof.android.view.FailproofActivity;
 import br.eng.crisjr.failproof.web;
 
 /**
@@ -10,15 +9,17 @@ import br.eng.crisjr.failproof.web;
 public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
     public static final int GET_LINKS = 0;
     public static final int GET_LISTS = 1;
-    private FailproofActivity mother;
+    private AccessResultant mother;
     private int operation = GET_LINKS;
 
-    public void setMother(FailproofActivity mother) {
+    public AccessResultant setMother(AccessResultant mother) {
         this.mother = mother;
+        return this.mother;
     }
 
-    public void setOperation(int operation) {
+    public int setOperation(int operation) {
         this.operation = operation;
+        return this.operation;
     }
 
     @Override
