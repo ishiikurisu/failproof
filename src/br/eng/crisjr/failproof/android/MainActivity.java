@@ -33,6 +33,7 @@ public class MainActivity extends FailproofActivity {
             Button button = new Button(getApplicationContext());
             String target = controller.query(it)[0];
 
+//            System.out.println(target);
             button.setText(it);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
