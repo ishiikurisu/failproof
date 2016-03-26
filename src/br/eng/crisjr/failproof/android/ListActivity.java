@@ -10,7 +10,7 @@ import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
 import br.eng.crisjr.failproof.android.model.Checklist;
 
 /**
- * Page describing a checklist
+ * Page describing a checklist. Must receive the target checklist as an extra.
  */
 public class ListActivity extends Activity implements AccessResultant {
     private Checklists controller = new Checklists();
