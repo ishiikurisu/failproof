@@ -1,6 +1,7 @@
 package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -41,5 +42,8 @@ public class ListActivity extends Activity implements AccessResultant {
     }
 
     public void onClickButtonSave(View view) {
+        TextView textTitle= (TextView) findViewById(R.id.textTitle);
+        Intent intent = new Intent(this, Checklist.class);
+        intent.putExtra("checklist", textTitle.getText());
     }
 }
