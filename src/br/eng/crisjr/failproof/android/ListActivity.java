@@ -42,8 +42,14 @@ public class ListActivity extends Activity implements AccessResultant {
     }
 
     public void onClickButtonSave(View view) {
-        TextView textTitle= (TextView) findViewById(R.id.textTitle);
-        Intent intent = new Intent(this, Checklist.class);
+        TextView textTitle = (TextView) findViewById(R.id.textTitle);
+        Intent intent = new Intent(this, ChecklistActivity.class);
+
+        /* Saves checklist on memory */
+        // TODO save checklist on memory
+
+        /* Start new Activity */
         intent.putExtra("checklist", textTitle.getText());
+        startActivity(intent);
     }
 }

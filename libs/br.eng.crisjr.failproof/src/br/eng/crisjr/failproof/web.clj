@@ -2,10 +2,10 @@
   (:gen-class
     :name br.eng.crisjr.failproof.web
     :methods [#^{:static true} [getLists [String] "[Ljava.lang.String;"]
-              #^{:static true} [getLinks [String] "[Ljava.lang.String;"]])
+              #^{:static true} [getLinks [String] "[Ljava.lang.String;"]
+              #^{:static true} [getList [String] "[Ljava.lang.String;"]])
   (:require [br.eng.crisjr.failproof.fetcher :as fetcher]
-            [br.eng.crisjr.failproof.extractor :as extractor]
-            [br.eng.crisjr.failproof.linker :as linker]))
+            [br.eng.crisjr.failproof.extractor :as extractor]))
 
 ;; MAIN FUNCTIONS
 (defn obtain-raw-data
@@ -14,25 +14,43 @@
   (-> arg fetcher/fetch fetcher/parse))
 
 (defn extract-lists
-  "Let's transform these lists into an array of strings"
+  "Getting our lists"
   [stuff]
-  (mapv extractor/extract stuff))
+  (extractor/extract-lists stuff))
 
 (defn extract-links
   "Let's transform these lists into links"
   [stuff]
-  (mapv linker/extract stuff))
+  (extractor/extract-links stuff))
+
+(defn get-all-lists
+  [stuff]
+  (let [lists (extractor/extract-lists stuff)
+        links (extractor/extract-links stuff)]
+    (loop [index 0
+           limit (count lists)
+           box (vector)]
+      (if (= limit index)
+        box
+        (recur (inc index)
+               limit
+               (conj box (str (nth lists index) "\n"
+                              (fetcher/get-list (nth links index)) "\n")))))))
 
 ;; INTERFACE
 (defn -getLists
   [inlet]
-  (-> inlet obtain-raw-data extract-lists into-array))
+  (-> inlet obtain-raw-data extract-lists))
 
 (defn -getLinks
   [inlet]
-  (-> inlet obtain-raw-data extract-links into-array))
+  (-> inlet obtain-raw-data extract-links))
+
+(defn -getList
+  [link]
+  (-> link println))
 
 (defn -main
   "Let's get a web page for you now"
   [& args]
-  (-> args (nth 0) obtain-raw-data extract-links println))
+  (-> args (nth 0) obtain-raw-data get-all-lists println))

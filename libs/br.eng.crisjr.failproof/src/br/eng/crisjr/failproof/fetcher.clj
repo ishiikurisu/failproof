@@ -2,35 +2,48 @@
   (:gen-class)
   (:require [clojure.string :as str]))
 
-(def list-beginning "<div class=\"post-content\">")
-;; (def list-beginning "<div class=\"body-text\">")
-(def list-ending "</div>")
-
-(defn entering-list? [line] (= line list-beginning))
-(defn leaving-list? [line] (= (compare line list-ending) 0))
-
+;; Initial fetch
 (defn parse-loop
-  [lines index limit inside box stuff]
-  (if (= index limit)
+  [line lines stuff]
+  (if (nil? line)
     stuff
-    (let [line (str/trim (nth lines index))]
-      (if (not inside)
-        ;; should get inside?
-        (if (entering-list? line)
-          (parse-loop lines (inc index) limit true (str) stuff)
-          (parse-loop lines (inc index) limit false nil stuff))
-        ;; should leave?
-        (if (leaving-list? line)
-          (parse-loop lines (inc index) limit (not inside) nil (conj stuff box))
-          (parse-loop lines (inc index) limit inside (str box line "\n") stuff))))))
+    (let [data (str/split line #":")]
+        (parse-loop (first lines)
+                    (rest lines)
+                    (assoc stuff :lists (conj (:lists stuff)
+                                              (str/trim (nth data 0)))
+                                 :links (conj (:links stuff)
+                                              (str/trim (nth data 1))))))))
 
 (defn parse
-  "Extract the lists from the html file line by line"
-  [html]
-  (let [lines (str/split-lines html)]
-    (parse-loop lines 0 (count lines) false nil (vector))))
+  "Extract the lists from the yaml file line by line"
+  [yaml]
+  (let [lines (str/split-lines yaml)]
+    (parse-loop (first lines) (rest lines) {:lists (vector) :links (vector)})))
 
 (defn fetch
   "Gets the html from the chosen address"
   [source]
   (slurp source))
+
+;; List fetch
+(defn get-title
+  [inlet]
+  (subs inlet 0 (-> inlet count dec)))
+
+(defn get-item
+  [inlet]
+  (subs inlet 2 (count inlet)))
+
+(defn listify
+  [inlet]
+  (let [lines (str/split-lines inlet)]
+    (reduce #(str %1 (get-item %2) "\n")
+            (str (-> lines first get-title) "\n")
+            (rest lines))))
+
+(defn get-list
+  [link]
+  (-> (str "https://raw.githubusercontent.com/ishiikurisu/checklists/master/" link)
+      fetch
+      listify))

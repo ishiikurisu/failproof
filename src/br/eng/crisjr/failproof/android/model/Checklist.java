@@ -5,12 +5,15 @@ import java.util.ArrayList;
 public class Checklist {
     private String name;
     private ArrayList<String> stuff = new ArrayList<>();
+    private ArrayList<Boolean> checks = new ArrayList<>();
 
     public Checklist(String inlet) {
         String[] data = inlet.split("\n");
+        checks = new ArrayList<>();
         name = data[0];
         for (int i = 1; i < data.length; ++i) {
             stuff.add(data[i]);
+            checks.add(false);
         }
     }
 
