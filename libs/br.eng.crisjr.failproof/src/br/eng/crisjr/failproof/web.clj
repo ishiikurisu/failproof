@@ -3,7 +3,7 @@
     :name br.eng.crisjr.failproof.web
     :methods [#^{:static true} [getLists [String] "[Ljava.lang.String;"]
               #^{:static true} [getLinks [String] "[Ljava.lang.String;"]
-              #^{:static true} [getList [String] "[Ljava.lang.String;"]])
+              #^{:static true} [getList [String] "java.lang.String"]])
   (:require [br.eng.crisjr.failproof.fetcher :as fetcher]
             [br.eng.crisjr.failproof.extractor :as extractor]))
 
@@ -40,15 +40,15 @@
 ;; INTERFACE
 (defn -getLists
   [inlet]
-  (-> inlet obtain-raw-data extract-lists))
+  (-> inlet obtain-raw-data extract-lists into-array))
 
 (defn -getLinks
   [inlet]
-  (-> inlet obtain-raw-data extract-links))
+  (-> inlet obtain-raw-data extract-links into-array))
 
 (defn -getList
   [link]
-  (-> link println))
+  (-> link fetcher/get-list))
 
 (defn -main
   "Let's get a web page for you now"
