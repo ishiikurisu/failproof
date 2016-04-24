@@ -2,7 +2,9 @@
   (:gen-class
     :name br.eng.crisjr.failproof.web
     :methods [#^{:static true} [getLists [String] "[Ljava.lang.String;"]
+              #^{:static true} [getLists [] "[Ljava.lang.String;"]
               #^{:static true} [getLinks [String] "[Ljava.lang.String;"]
+              #^{:static true} [getLinks [] "[Ljava.lang.String;"]
               #^{:static true} [getList [String] "java.lang.String"]])
   (:require [br.eng.crisjr.failproof.fetcher :as fetcher]
             [br.eng.crisjr.failproof.extractor :as extractor]))
@@ -38,13 +40,18 @@
                               (fetcher/get-list (nth links index)) "\n")))))))
 
 ;; INTERFACE
+(def standard-link "https://raw.githubusercontent.com/ishiikurisu/checklists/master/lists.yml")
 (defn -getLists
-  [inlet]
-  (-> inlet obtain-raw-data extract-lists into-array))
+  ([inlet]
+   (-> inlet obtain-raw-data extract-lists into-array))
+  ([]
+   (-> standard-link -getLists)))
 
 (defn -getLinks
-  [inlet]
-  (-> inlet obtain-raw-data extract-links into-array))
+  ([inlet]
+   (-> inlet obtain-raw-data extract-links into-array))
+  ([]
+   (-> standard-link -getLinks)))
 
 (defn -getList
   [link]

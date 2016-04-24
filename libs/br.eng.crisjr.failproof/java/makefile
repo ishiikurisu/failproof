@@ -4,4 +4,4 @@ compile:
 	javac Test.java -cp ./br.eng.crisjr.failproof.jar:.
 
 do: compile
-	java -cp ./br.eng.crisjr.failproof.jar:. Test $(target)
+	java -cp ./br.eng.crisjr.failproof.jar:. Test
