@@ -3,6 +3,13 @@
   <component name="FacetManager">
     <facet type="android" name="Android">
       <configuration>
+        <option name="GEN_FOLDER_RELATIVE_PATH_APT" value="/./gen" />
+        <option name="GEN_FOLDER_RELATIVE_PATH_AIDL" value="/./gen" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/./AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/./res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/./assets" />
+        <option name="LIBS_FOLDER_RELATIVE_PATH" value="/./libs" />
+        <option name="PROGUARD_LOGS_FOLDER_RELATIVE_PATH" value="/./proguard_logs" />
         <option name="UPDATE_PROPERTY_FILES" value="true" />
       </configuration>
     </facet>
@@ -15,6 +22,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="br.eng.crisjr.failproof-0.1.0" level="project" />
     <orderEntry type="library" name="br.eng.crisjr.failproof" level="project" />
   </component>
 </module>
