@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Failproof</string>
+    <string name="app_name">Failproof Checklists</string>
+    <string name="empty_lists">Your lists are empty :(\nHow about adding some?</string>
+    <string name="button_add">Add list</string>
+
 </resources>
