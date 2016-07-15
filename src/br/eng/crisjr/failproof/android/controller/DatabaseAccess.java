@@ -28,11 +28,11 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
 
         switch (operation) {
             case GET_LINKS:
-                outlet = web.getLinks(params[0]);
+                outlet = web.getLinks();
                 break;
 
             case GET_LISTS:
-                outlet = web.getLists(params[0]);
+                outlet = web.getLists();
                 break;
         }
 

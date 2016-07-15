@@ -17,7 +17,7 @@ implements AccessResultant {
         setContentView(R.layout.main);
         DatabaseAccess access = new DatabaseAccess();
         access.setMother(this);
-        access.execute("https://raw.githubusercontent.com/ishiikurisu/checklists/master/lists.yml");
+        access.execute();
     }
 
     public void receiveLists(String[] result) {
