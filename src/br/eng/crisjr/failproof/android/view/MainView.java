@@ -49,7 +49,9 @@ public class MainView
 
         linear.removeAllViews();
         for (int i = 0; i < howMany; ++i)
+        {
             linear.addView(views[i]);
+        }
 
         return linear;
     }

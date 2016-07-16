@@ -2,7 +2,9 @@ package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -11,7 +13,6 @@ import br.eng.crisjr.failproof.android.view.MainView;
 
 public class MainActivity
        extends Activity
-//       implements AccessResultant
 {
     private MemoryAccess card;
     private MainView view;
@@ -20,21 +21,14 @@ public class MainActivity
      * Called when the activity is first created.
      */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         view = new MainView();
         card = new MemoryAccess(getApplicationContext());
         updateLists();
-//        DatabaseAccess access = new DatabaseAccess();
-//        access.setMother(this);
-//        access.execute();
     }
-
-//    public void receiveLists(String[] result) {
-//        TextView tv = (TextView) findViewById(R.id.textHello);
-//        tv.setText(result[0]);
-//    }
 
     private void updateLists()
     {
@@ -46,10 +40,17 @@ public class MainActivity
 
         if (lists == null) {
             scroll = view.resetScroll(context);
-            scroll.setId(R.id.scrollLists);
         }
         // TODO create else statement
 
+        scroll.setId(R.id.scrollLists);
         view.replaceScroll(layoutMain, scroll);
+    }
+
+    public void onClick_buttonAdd(View view)
+    {
+        Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(intent);
+        // TODO Create Search Activity
     }
 }
