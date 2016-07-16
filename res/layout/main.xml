@@ -14,11 +14,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
                 android:id="@+id/scrollLists">
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:textSize="25sp"
-                  android:layout_gravity="center_horizontal"
-                  android:text="@string/empty_lists" />
+
     </ScrollView>
     <GridLayout android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -26,10 +22,10 @@
                 android:columnCount="2"
                 android:rowCount="1"
                 android:orientation="horizontal" >
-        <Button android:layout_gravity="fill"
+        <Button android:layout_gravity="center_horizontal"
                 android:layout_column="0"
                 android:text="+"/>
-        <Button android:layout_gravity="fill"
+        <Button android:layout_gravity="center_horizontal"
                 android:layout_column="1"
                 android:text="\?"/>
     </GridLayout>
