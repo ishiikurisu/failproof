@@ -12,9 +12,8 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
     private AccessResultant mother;
     private int operation = GET_LINKS;
 
-    public AccessResultant setMother(AccessResultant mother) {
+    public DatabaseAccess(AccessResultant mother) {
         this.mother = mother;
-        return this.mother;
     }
 
     public int setOperation(int operation) {

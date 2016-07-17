@@ -4,24 +4,18 @@
               android:id="@+id/linearSearch"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="@string/search_title"
-              android:textSize="30sp"
               android:layout_gravity="center"
-              android:id="@+id/textTitle"/>
-    <LinearLayout android:layout_width="fill_parent"
-                  android:layout_height="wrap_content">
-        <ImageView android:layout_width="wrap_content"
-                   android:layout_height="match_parent"
-                   android:src="@android:drawable/sym_action_chat"
-                   android:background="@android:color/background_dark"
-                   android:id="@+id/imageGlass" />
-        <EditText android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:text="@string/search_title"
-                  android:id="@+id/editSearch"/>
-    </LinearLayout>
+              android:textSize="40sp"
+              android:text="@string/search_title"/>
+
+    <EditText android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/search_title"
+              android:id="@+id/editSearch"/>
+
     <ScrollView android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/scrollSearch">
