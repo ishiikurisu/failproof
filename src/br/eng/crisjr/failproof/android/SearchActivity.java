@@ -23,7 +23,7 @@ public class SearchActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
         DatabaseAccess access = new DatabaseAccess(this);
-        access.setOperation(DatabaseAccess.GET_LISTS);
+        access.setOperation(DatabaseAccess.GET_STUFF);
         access.execute();
     }
 
@@ -39,7 +39,7 @@ public class SearchActivity
         LinearLayout linearSearch = (LinearLayout) findViewById(R.id.linearSearch);
 
         if (result != null) {
-            scroll = view.createScroll(getApplicationContext(),result);
+            scroll = view.createScroll(getApplicationContext(), result);
         }
 
         scroll.setId(R.id.scrollSearch);

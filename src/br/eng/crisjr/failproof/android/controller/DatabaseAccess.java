@@ -9,6 +9,7 @@ import br.eng.crisjr.failproof.web;
 public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
     public static final int GET_LINKS = 0;
     public static final int GET_LISTS = 1;
+    public static final int GET_STUFF = 2;
     private AccessResultant mother;
     private int operation = GET_LINKS;
 
@@ -32,6 +33,9 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
 
             case GET_LISTS:
                 outlet = web.getLists();
+                break;
+            case GET_STUFF:
+                outlet = web.getStuff();
                 break;
         }
 
