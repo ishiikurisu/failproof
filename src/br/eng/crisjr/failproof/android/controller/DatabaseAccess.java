@@ -10,6 +10,7 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
     public static final int GET_LINKS = 0;
     public static final int GET_LISTS = 1;
     public static final int GET_STUFF = 2;
+    public static final int GET_LIST = 3;
     private AccessResultant mother;
     private int operation = GET_LINKS;
 
@@ -36,6 +37,10 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
                 break;
             case GET_STUFF:
                 outlet = web.getStuff();
+                break;
+
+            case GET_LIST:
+                outlet = web.getList(params[0]).split("\n");
                 break;
         }
 

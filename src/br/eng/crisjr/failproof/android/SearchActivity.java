@@ -39,7 +39,7 @@ public class SearchActivity
         LinearLayout linearSearch = (LinearLayout) findViewById(R.id.linearSearch);
 
         if (result != null) {
-            scroll = view.createScroll(getApplicationContext(), result);
+            scroll = view.createScroll(getApplicationContext(), this, result);
         }
 
         scroll.setId(R.id.scrollSearch);

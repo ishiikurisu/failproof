@@ -15,5 +15,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SearchActivity"/>
+        <activity android:name=".LinkActivity" android:label="LinkActivity"/>
     </application>
 </manifest>

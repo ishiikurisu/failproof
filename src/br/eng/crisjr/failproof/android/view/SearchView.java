@@ -1,11 +1,14 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import br.eng.crisjr.failproof.android.LinkActivity;
+import br.eng.crisjr.failproof.android.SearchActivity;
 import br.eng.crisjr.failproof.web;
 
 /**
@@ -26,7 +29,8 @@ public class SearchView
         return new MainView().replaceScroll(linear, scroll);
     }
 
-    public ScrollView createScroll(Context context, String[] raw) {
+    public ScrollView createScroll(Context context, SearchActivity activity, String[] raw)
+    {
         ScrollView scroll = new ScrollView(context);
         LinearLayout stuff = new LinearLayout(context);
         int howMany = raw.length;
@@ -43,7 +47,7 @@ public class SearchView
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    list_onClick(v, context, link);
+                    list_onClick(context, activity, link);
                 }
             });
             stuff.addView(tv);
@@ -53,8 +57,11 @@ public class SearchView
         return scroll;
     }
 
-    private void list_onClick(View view, Context context, String link) {
-        Toast.makeText(context, link, Toast.LENGTH_LONG).show();
+    private void list_onClick(Context context, SearchActivity activity, String link)
+    {
+        Intent intent = new Intent(context, LinkActivity.class);
+        intent.putExtra("link", link);
+        activity.startActivity(intent);
     }
 
 }
