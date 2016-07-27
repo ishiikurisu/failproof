@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.web;
 
 /**
@@ -35,15 +36,25 @@ public class SearchView
         stuff.setOrientation(LinearLayout.VERTICAL);
         for (int i = 0; i < howMany; ++i) {
             String list = lists[i];
+            String link = links[i];
             TextView tv = new TextView(context);
             tv.setText(list);
             tv.setTextSize(20);
-            // TODO add callback to text
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    list_onClick(v, context, link);
+                }
+            });
             stuff.addView(tv);
         }
 
         scroll.addView(stuff);
         return scroll;
+    }
+
+    private void list_onClick(View view, Context context, String link) {
+        Toast.makeText(context, link, Toast.LENGTH_LONG).show();
     }
 
 }
