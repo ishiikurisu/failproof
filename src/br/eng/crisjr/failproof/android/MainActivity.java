@@ -13,6 +13,9 @@ import android.widget.Toast;
 import br.eng.crisjr.failproof.android.controller.*;
 import br.eng.crisjr.failproof.android.view.MainView;
 
+/**
+ * Activity for the Main Screen
+ */
 public class MainActivity
        extends Activity
 {
@@ -32,6 +35,11 @@ public class MainActivity
         updateLists();
     }
 
+    /**
+     * Checks if it must update the lists on the screen.
+     * It resets the scroll if there are no lists in memory by showing an "I'm empty" message,
+     * or shows the lists to be accessed. Currently, not showing stored lists.
+     */
     private void updateLists()
     {
         Context context = getApplicationContext();
@@ -49,6 +57,11 @@ public class MainActivity
         view.replaceScroll(layoutMain, scroll);
     }
 
+    /**
+     * Callback to + button. Will call another activity to show lists available on the internet.
+     *
+     * @param view I don't know why this argument is here
+     */
     public void onClick_buttonAdd(View view)
     {
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
@@ -56,6 +69,10 @@ public class MainActivity
         // TODO Improve Search Activity
     }
 
+    /**
+     * Callback to ? button
+     * @param view I don't know why this argument is here either
+     */
     public void onClick_buttonRandom(View view) {
         BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
         String output = "Yes! We have bluetooth!";

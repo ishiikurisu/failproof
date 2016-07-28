@@ -14,10 +14,20 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
     private AccessResultant mother;
     private int operation = GET_LINKS;
 
+    /**
+     * Created a new database access object.
+     *
+     * @param mother The object that will call the download task.
+     */
     public DatabaseAccess(AccessResultant mother) {
         this.mother = mother;
     }
 
+    /**
+     * Defines which download operation is desired.
+     * @param operation The code to one of the available operations (GET_LINKS, GET_LISTS, GET_STUFF and GET_LIST).
+     * @return The chosen operation.
+     */
     public int setOperation(int operation) {
         this.operation = operation;
         return this.operation;

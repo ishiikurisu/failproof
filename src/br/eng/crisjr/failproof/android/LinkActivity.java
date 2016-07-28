@@ -26,7 +26,11 @@ public class LinkActivity
         access.execute(link);
     }
 
-    // when the lists are received from the internet
+    /**
+     * Implementation of the required method to download lists from internet.
+     *
+     * @param result the list title and items
+     */
     public void receiveLists(String[] result)
     {
         TextView tv = (TextView) findViewById(R.id.textPlaceholder);
@@ -39,4 +43,6 @@ public class LinkActivity
 
         tv.setText(outlet);
     }
+
+    // TODO Implement the save and cancel buttons. Cancel first because it' easier.
 }

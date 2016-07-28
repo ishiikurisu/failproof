@@ -22,6 +22,8 @@ public class SearchActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
+
+        // download content from internet
         DatabaseAccess access = new DatabaseAccess(this);
         access.setOperation(DatabaseAccess.GET_STUFF);
         access.execute();
@@ -33,6 +35,11 @@ public class SearchActivity
         super.onResume();
     }
 
+    /**
+     * Implementation of the required method to download
+     *
+     * @param result an array of strings containing pairs "List\nLink"
+     */
     public void receiveLists(String[] result)
     {
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollSearch);

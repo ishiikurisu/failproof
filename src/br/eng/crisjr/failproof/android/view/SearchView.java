@@ -24,11 +24,26 @@ public class SearchView
 
     }
 
+    /**
+     * Replaces the old scroll in the main layout with a brand new one
+     *
+     * @param linear The main layout on screen
+     * @param scroll The newly created scroll
+     * @return the main layout with the appropriate replacements
+     */
     public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll)
     {
         return new MainView().replaceScroll(linear, scroll);
     }
 
+
+    /**
+     * Creates a new scroll, containing
+     * @param context the application's context
+     * @param activity the activity we are adding this scroll to
+     * @param raw the stuff we download from the API
+     * @return the new scroll
+     */
     public ScrollView createScroll(Context context, SearchActivity activity, String[] raw)
     {
         ScrollView scroll = new ScrollView(context);
@@ -57,6 +72,13 @@ public class SearchView
         return scroll;
     }
 
+    /**
+     * Called when each of the scroll items are pressed. Calls a new activity which
+     * will download the chosen list and show it
+     * @param context The application's context
+     * @param activity the activity we are coming from
+     * @param link the link to the file on the internet
+     */
     private void list_onClick(Context context, SearchActivity activity, String link)
     {
         Intent intent = new Intent(context, LinkActivity.class);

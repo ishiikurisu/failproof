@@ -14,6 +14,12 @@ import br.eng.crisjr.failproof.android.R;
  */
 public class MainView
 {
+    /**
+     * Creates a brand new scroll, only with a message signaling it is empty
+     *
+     * @param context The application's context
+     * @return the new scroll
+     */
     public ScrollView resetScroll(Context context)
     {
         ScrollView scroll = new ScrollView(context);
@@ -35,6 +41,12 @@ public class MainView
 
     // TODO create static method for adding a list of titles to a scroll
 
+    /**
+     * Places the newly created scroll in the main layout.
+     * @param linear The main layout on the screen
+     * @param scroll The layout to store the lists
+     * @return The new main layout
+     */
     public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll)
     {
         int howMany = linear.getChildCount();
