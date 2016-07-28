@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import br.eng.crisjr.failproof.android.R;
+import br.eng.crisjr.failproof.android.controller.MemoryAccess;
 
 /**
  * Monster to create views and controllers for main screen
@@ -15,8 +16,17 @@ import br.eng.crisjr.failproof.android.R;
 public class MainView
 {
     /**
-     * Creates a brand new scroll, only with a message signaling it is empty
+     * Load lists from the memory.
      *
+     * @param context The application's context.
+     * @return returns an array of strings with the lists' names if they exist, otherwise null.
+     */
+    public String[] getLists(Context context) {
+        return new MemoryAccess(context).loadLists();
+    }
+
+    /**
+     * Creates a brand new scroll, only with a message signaling it is empty
      * @param context The application's context
      * @return the new scroll
      */

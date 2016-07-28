@@ -28,7 +28,6 @@ public class LinkActivity
 
     /**
      * Implementation of the required method to download lists from internet.
-     *
      * @param result the list title and items
      */
     public void receiveLists(String[] result)
@@ -36,6 +35,7 @@ public class LinkActivity
         TextView tv = (TextView) findViewById(R.id.textPlaceholder);
         String outlet = "";
 
+        // TODO Format the list into something that actually can be shown to the user
         for (String it: result)
         {
             outlet += it + "\n";

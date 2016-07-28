@@ -8,9 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
-import br.eng.crisjr.failproof.android.controller.*;
+import br.eng.crisjr.failproof.android.controller.MemoryAccess;
 import br.eng.crisjr.failproof.android.view.MainView;
 
 /**
@@ -19,7 +18,6 @@ import br.eng.crisjr.failproof.android.view.MainView;
 public class MainActivity
        extends Activity
 {
-    private MemoryAccess card;
     private MainView view;
 
     /**
@@ -31,7 +29,6 @@ public class MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         view = new MainView();
-        card = new MemoryAccess(getApplicationContext());
         updateLists();
     }
 
@@ -45,8 +42,7 @@ public class MainActivity
         Context context = getApplicationContext();
         LinearLayout layoutMain = (LinearLayout) findViewById(R.id.layoutMain);
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollLists);
-        card = new MemoryAccess(context);
-        String[] lists = card.loadLists();
+        String[] lists = view.getLists(context);
 
         if (lists == null) {
             scroll = view.resetScroll(context);
@@ -59,7 +55,6 @@ public class MainActivity
 
     /**
      * Callback to + button. Will call another activity to show lists available on the internet.
-     *
      * @param view I don't know why this argument is here
      */
     public void onClick_buttonAdd(View view)
