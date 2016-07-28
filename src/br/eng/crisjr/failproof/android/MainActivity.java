@@ -1,6 +1,7 @@
 package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.controller.*;
 import br.eng.crisjr.failproof.android.view.MainView;
 
@@ -51,6 +53,17 @@ public class MainActivity
     {
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
         startActivity(intent);
-        // TODO Create Search Activity
+        // TODO Improve Search Activity
+    }
+
+    public void onClick_buttonRandom(View view) {
+        BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
+        String output = "Yes! We have bluetooth!";
+
+        if (bluetooth == null) {
+            output = "no bluetooth :(";
+        }
+
+        Toast.makeText(getApplicationContext(), output, Toast.LENGTH_SHORT).show();
     }
 }

@@ -26,6 +26,7 @@ public class LinkActivity
         access.execute(link);
     }
 
+    // when the lists are received from the internet
     public void receiveLists(String[] result)
     {
         TextView tv = (TextView) findViewById(R.id.textPlaceholder);

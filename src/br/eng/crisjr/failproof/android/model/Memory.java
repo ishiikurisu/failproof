@@ -28,7 +28,7 @@ public class Memory
         SharedPreferences.Editor editor = preferences.edit();
         int size = preferences.getInt("size", 0);
 
-        // TODO save checklist
+        // TODO Save checklist
 
         editor.putInt("size", size + 1);
         editor.commit();

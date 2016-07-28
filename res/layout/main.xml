@@ -29,6 +29,8 @@
                 android:text="+"/>
         <Button android:layout_gravity="center_horizontal"
                 android:layout_column="1"
+                android:id="@+id/buttonRandom"
+                android:onClick="onClick_buttonRandom"
                 android:text="\?"/>
     </GridLayout>
 
