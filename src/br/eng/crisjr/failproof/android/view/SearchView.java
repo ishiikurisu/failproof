@@ -25,8 +25,7 @@ public class SearchView
     }
 
     /**
-     * Replaces the old scroll in the main layout with a brand new one
-     *
+     * Replaces the old scroll in the main layout with a brand new one.
      * @param linear The main layout on screen
      * @param scroll The newly created scroll
      * @return the main layout with the appropriate replacements
@@ -36,9 +35,8 @@ public class SearchView
         return new MainView().replaceScroll(linear, scroll);
     }
 
-
     /**
-     * Creates a new scroll, containing
+     * Creates a new scroll, containing the lists' names, which go to the download activity.
      * @param context the application's context
      * @param activity the activity we are adding this scroll to
      * @param raw the stuff we download from the API

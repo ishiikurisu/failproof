@@ -36,8 +36,7 @@ public class SearchActivity
     }
 
     /**
-     * Implementation of the required method to download
-     *
+     * Implementation of the required method to download.
      * @param result an array of strings containing pairs "List\nLink"
      */
     public void receiveLists(String[] result)
