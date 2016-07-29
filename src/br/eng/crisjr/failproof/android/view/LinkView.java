@@ -10,6 +10,10 @@ import android.widget.TextView;
  * View class for the Link activity
  */
 public class LinkView {
+    public static final int LINK_REQUEST = 1;
+    public static final int SAVE_PLEASE = 2;
+    public static final int CANCEL_PLEASE = 3;
+
     /**
      * Creates a new scroll to add the possible list
      *

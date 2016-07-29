@@ -2,6 +2,7 @@ package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import br.eng.crisjr.failproof.android.controller.AccessResultant;
@@ -16,6 +17,7 @@ public class LinkActivity
        implements AccessResultant
 {
     LinkView view = new LinkView();
+    String[] list = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -42,7 +44,18 @@ public class LinkActivity
         scrollInfo = view.createScroll(getApplicationContext(), result);
         scrollInfo.setId(id);
         view.replaceScroll(linearInfo, scrollInfo);
+        list = result;
     }
 
     // TODO Implement the save and cancel buttons. Cancel first because it' easier.
+
+    /**
+     * Cancels the operation of saving the list
+     *
+     * @param view I still don't know why this is here. I guess this is the button?
+     */
+    public void onClick_buttonCancel(View view) {
+        setResult(LinkView.CANCEL_PLEASE);
+        finish();
+    }
 }

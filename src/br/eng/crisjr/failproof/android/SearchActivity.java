@@ -2,10 +2,13 @@ package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.content.Intent;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.controller.AccessResultant;
 import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
+import br.eng.crisjr.failproof.android.view.LinkView;
 import br.eng.crisjr.failproof.android.view.SearchView;
 
 /**
@@ -50,5 +53,24 @@ public class SearchActivity
 
         scroll.setId(R.id.scrollSearch);
         view.replaceScroll(linearSearch, scroll);
+    }
+
+    /**
+     * Method to receive the results of the child activities
+     *
+     * @param requestCode The code to the requested activity
+     * @param resultCode  The result of the operation
+     * @param intent      The intent sent to the activity
+     */
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        switch (resultCode) {
+            case LinkView.CANCEL_PLEASE:
+                Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_SHORT).show();
+                break;
+            case LinkView.SAVE_PLEASE:
+                Toast.makeText(getApplicationContext(), "I didn't save because I can't", Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 }

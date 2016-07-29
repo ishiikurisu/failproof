@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 import br.eng.crisjr.failproof.android.LinkActivity;
 import br.eng.crisjr.failproof.android.SearchActivity;
 import br.eng.crisjr.failproof.web;
@@ -81,7 +80,7 @@ public class SearchView
     {
         Intent intent = new Intent(context, LinkActivity.class);
         intent.putExtra("link", link);
-        activity.startActivity(intent);
+        activity.startActivityForResult(intent, LinkView.LINK_REQUEST);
     }
 
 }
