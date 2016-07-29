@@ -47,15 +47,26 @@ public class LinkActivity
         list = result;
     }
 
-    // TODO Implement the save and cancel buttons. Cancel first because it' easier.
-
     /**
-     * Cancels the operation of saving the list
-     *
+     * Cancels the operation of saving the list and returns to the search screen.
      * @param view I still don't know why this is here. I guess this is the button?
      */
     public void onClick_buttonCancel(View view) {
         setResult(LinkView.CANCEL_PLEASE);
         finish();
     }
+
+    /**
+     * Saves the current list on memory then returns to the main screen.
+     *
+     * @param v Ignoring this
+     */
+    public void onClick_buttonSave(View v) {
+        if (list == null) return;
+
+        view.saveList(getApplicationContext(), list);
+        setResult(LinkView.SAVE_PLEASE);
+        finish();
+    }
+
 }

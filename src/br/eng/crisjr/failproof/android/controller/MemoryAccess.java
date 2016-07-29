@@ -25,4 +25,9 @@ public class MemoryAccess
 
         return outlet;
     }
+
+    public void createList(String[] list) {
+        Checklist checklist = new Checklist(list);
+        Memory.store(this.context, checklist);
+    }
 }

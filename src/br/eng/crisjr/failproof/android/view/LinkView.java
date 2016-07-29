@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import br.eng.crisjr.failproof.android.controller.MemoryAccess;
 
 /**
  * View class for the Link activity
@@ -65,4 +66,15 @@ public class LinkView {
     public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll) {
         return new MainView().replaceScroll(linear, scroll);
     }
+
+    /**
+     * Saves this list on local memory
+     *
+     * @param list the list as provided by the internet
+     */
+    public void saveList(Context context, String[] list) {
+        MemoryAccess card = new MemoryAccess(context);
+        card.createList(list);
+    }
+
 }

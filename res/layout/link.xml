@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_column="0"
+                android:onClick="onClick_buttonSave"
                 android:text="Save"/>
         <Button android:id="@+id/buttonCancel"
                 android:layout_height="wrap_content"
