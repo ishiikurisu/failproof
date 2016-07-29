@@ -77,4 +77,9 @@ public class MainView
 
         return linear;
     }
+
+    public void resetMemory(Context context) {
+        new MemoryAccess(context).resetMemory();
+    }
+
 }

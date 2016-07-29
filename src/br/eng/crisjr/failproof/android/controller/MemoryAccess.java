@@ -15,6 +15,11 @@ public class MemoryAccess
         this.context = context;
     }
 
+    /**
+     * Loads all lists saved on memory
+     *
+     * @return the lists in virtual memory format
+     */
     public String[] loadLists()
     {
         Checklist[] lists = Memory.retrieveAllLists(context);
@@ -26,8 +31,16 @@ public class MemoryAccess
         return outlet;
     }
 
+    /**
+     * Adds a new checklist to memory
+     * @param list the list to be saved as provided by the internet
+     */
     public void createList(String[] list) {
         Checklist checklist = new Checklist(list);
         Memory.store(this.context, checklist);
+    }
+
+    public void resetMemory() {
+        Memory.resetMemory(context);
     }
 }

@@ -17,7 +17,6 @@ public class LinkView {
 
     /**
      * Creates a new scroll to add the possible list
-     *
      * @param context The application's context
      * @param list    The list, as provided by the internet
      * @return The scroll view with the layout and the

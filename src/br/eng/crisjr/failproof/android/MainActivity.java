@@ -29,6 +29,7 @@ public class MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         view = new MainView();
+        view.resetMemory(getApplicationContext());
         updateLists();
     }
 

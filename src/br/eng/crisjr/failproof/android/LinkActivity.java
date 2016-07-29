@@ -56,6 +56,13 @@ public class LinkActivity
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        setResult(LinkView.CANCEL_PLEASE);
+        super.onBackPressed();
+    }
+
+
     /**
      * Saves the current list on memory then returns to the main screen.
      *
@@ -63,7 +70,6 @@ public class LinkActivity
      */
     public void onClick_buttonSave(View v) {
         if (list == null) return;
-
         view.saveList(getApplicationContext(), list);
         setResult(LinkView.SAVE_PLEASE);
         finish();

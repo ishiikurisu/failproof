@@ -9,6 +9,12 @@ import android.preference.PreferenceManager;
  */
 public class Memory
 {
+    /**
+     * Retrieve all lists in memory
+     *
+     * @param context The application's context
+     * @return an array of every checklist on memory
+     */
     public static Checklist[] retrieveAllLists(Context context)
     {
         Checklist[] outlet = null;
@@ -22,15 +28,25 @@ public class Memory
         return outlet;
     }
 
+    /**
+     * Stores a checklist on memory under its position on memory
+     * @param context The application's context
+     * @param checklist The checklist object to be saved
+     */
     public static void store(Context context, Checklist checklist)
     {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         int size = preferences.getInt("size", 0);
-
-        // TODO Save checklist
-
+        editor.putString(String.format("%03d", size), checklist.toString());
         editor.putInt("size", size + 1);
         editor.commit();
+        editor.apply();
+    }
+
+    public static void resetMemory(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
     }
 }
