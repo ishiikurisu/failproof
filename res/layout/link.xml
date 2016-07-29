@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-    <LinearLayout android:id="@+id/layoutInfo"
-                  android:layout_column="0"
-                  android:orientation="vertical"
-                  android:gravity="center_horizontal"
-                  android:layout_height="wrap_content"
-                  android:layout_width="match_parent" >
-        <TextView android:text="Now Loading..."
-                  android:id="@+id/textPlaceholder"
-                  android:textSize="30sp"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"/>
-    </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:id="@+id/linearInfo">
+    <ScrollView android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/scrollInfo"
+                android:layout_gravity="center">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:orientation="vertical">
+            <TextView android:text="Now Loading..."
+                      android:id="@+id/textPlaceholder"
+                      android:textSize="30sp"
+                      android:layout_gravity="center"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-    <LinearLayout android:layout_height="wrap_content"
-                  android:layout_width="match_parent"
-                  android:orientation="horizontal"
-                  android:layout_column="0"
-                  android:layout_row="1">
+    </ScrollView>
+    <GridLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
         <Button android:id="@+id/buttonSave"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_column="0"
                 android:text="Save"/>
         <Button android:id="@+id/buttonCancel"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_column="1"
                 android:text="Cancel"/>
-    </LinearLayout>
+    </GridLayout>
 
-</GridLayout>
+</LinearLayout>

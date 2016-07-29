@@ -2,9 +2,11 @@ package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import br.eng.crisjr.failproof.android.controller.AccessResultant;
 import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
+import br.eng.crisjr.failproof.android.view.LinkView;
 
 /**
  * Activity to display a list which can be saved to memory or not
@@ -13,6 +15,8 @@ public class LinkActivity
        extends Activity
        implements AccessResultant
 {
+    LinkView view = new LinkView();
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -32,16 +36,12 @@ public class LinkActivity
      */
     public void receiveLists(String[] result)
     {
-        TextView tv = (TextView) findViewById(R.id.textPlaceholder);
-        String outlet = "";
-
-        // TODO Format the list into something that actually can be shown to the user
-        for (String it: result)
-        {
-            outlet += it + "\n";
-        }
-
-        tv.setText(outlet);
+        int id = R.id.scrollInfo;
+        ScrollView scrollInfo = (ScrollView) findViewById(id);
+        LinearLayout linearInfo = (LinearLayout) findViewById(R.id.linearInfo);
+        scrollInfo = view.createScroll(getApplicationContext(), result);
+        scrollInfo.setId(id);
+        view.replaceScroll(linearInfo, scrollInfo);
     }
 
     // TODO Implement the save and cancel buttons. Cancel first because it' easier.
