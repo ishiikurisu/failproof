@@ -47,8 +47,10 @@ public class MainActivity
 
         if (lists == null) {
             scroll = view.resetScroll(context);
+        } else {
+            // TODO Create scroll
+            Toast.makeText(MainActivity.this, "There is something in memory", Toast.LENGTH_SHORT).show();
         }
-        // TODO create else statement
 
         scroll.setId(R.id.scrollLists);
         view.replaceScroll(layoutMain, scroll);
@@ -61,7 +63,7 @@ public class MainActivity
     public void onClick_buttonAdd(View view)
     {
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, MainView.SAVE_REQUEST);
         // TODO Improve Search Activity
     }
 
@@ -78,5 +80,21 @@ public class MainActivity
         }
 
         Toast.makeText(getApplicationContext(), output, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Method to receive the results of the child activities
+     *
+     * @param requestCode The code to the requested activity
+     * @param resultCode  The result of the operation
+     * @param intent      The intent sent to the activity
+     */
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        switch (resultCode) {
+            case MainView.SAVE_REQUEST:
+                updateLists();
+                break;
+        }
     }
 }

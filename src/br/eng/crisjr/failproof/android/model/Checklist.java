@@ -22,6 +22,24 @@ public class Checklist
         }
     }
 
+    public Checklist(String inlet) {
+        String[] data = inlet.split("\n");
+        int limit = data.length;
+        title = data[0];
+        items = new String[limit - 1];
+        checked = new boolean[limit - 1];
+
+        for (int i = 1; i < limit; ++i) {
+            items[i - 1] = data[i].substring(1);
+            if (data[i].charAt(0) == '*') {
+                checked[i - 1] = true;
+            } else {
+                checked[i - 1] = false;
+            }
+        }
+    }
+
+
     public String toString()
     {
         String outlet = title;

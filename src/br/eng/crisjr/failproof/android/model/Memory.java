@@ -22,7 +22,13 @@ public class Memory
         int size = preferences.getInt("size", 0);
 
         if (size > 0) {
-            // TODO Load checklists
+            outlet = new Checklist[size];
+            for (int i = 0; i < size; ++i) {
+                String raw = preferences.getString(String.format("%03d", i), "");
+                if (raw.length() > 0) {
+                    outlet[i] = new Checklist(raw);
+                }
+            }
         }
 
         return outlet;

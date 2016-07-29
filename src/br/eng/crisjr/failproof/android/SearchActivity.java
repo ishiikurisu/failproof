@@ -9,6 +9,7 @@ import android.widget.Toast;
 import br.eng.crisjr.failproof.android.controller.AccessResultant;
 import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
 import br.eng.crisjr.failproof.android.view.LinkView;
+import br.eng.crisjr.failproof.android.view.MainView;
 import br.eng.crisjr.failproof.android.view.SearchView;
 
 /**
@@ -30,12 +31,6 @@ public class SearchActivity
         DatabaseAccess access = new DatabaseAccess(this);
         access.setOperation(DatabaseAccess.GET_STUFF);
         access.execute();
-    }
-
-    @Override
-    public void onResume()
-    {
-        super.onResume();
     }
 
     /**
@@ -69,7 +64,8 @@ public class SearchActivity
                 Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_SHORT).show();
                 break;
             case LinkView.SAVE_PLEASE:
-                Toast.makeText(getApplicationContext(), "I didn't save because I can't", Toast.LENGTH_LONG).show();
+                setResult(MainView.SAVE_REQUEST);
+                finish();
                 break;
         }
     }

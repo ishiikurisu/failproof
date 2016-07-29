@@ -15,6 +15,8 @@ import br.eng.crisjr.failproof.android.controller.MemoryAccess;
  */
 public class MainView
 {
+    public static final int SAVE_REQUEST = 0;
+
     /**
      * Load lists from the memory.
      *

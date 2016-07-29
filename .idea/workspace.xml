@@ -26,16 +26,16 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Preparing terrain to store a checklist on memory">
+    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Saving checklists on memory">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/br/eng/crisjr/failproof/android/MainActivity.class" afterPath="$PROJECT_DIR$/out/production/Failproof/br/eng/crisjr/failproof/android/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
     </list>
     <ignored path="Failproof.iws" />
@@ -58,51 +58,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="link.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/link.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.53932583">
+              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinkView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22097379">
-              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,11 +82,8 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-              <folding>
-                <element signature="e#982#983#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
-              </folding>
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -178,15 +146,15 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/DatabaseAccess.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/link.xml" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -835,7 +803,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469814917329</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Saving checklists on memory">
+      <created>1469827925099</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1469827925099</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -869,34 +843,6 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40925267" sideWeight="0.50329256" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291815" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40925267" sideWeight="0.49670744" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44483986" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24929444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -925,7 +871,8 @@
     <MESSAGE value="Populating link activity" />
     <MESSAGE value="Implemented cancel button" />
     <MESSAGE value="Preparing terrain to store a checklist on memory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparing terrain to store a checklist on memory" />
+    <MESSAGE value="Saving checklists on memory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving checklists on memory" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1288,16 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/link.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1309,50 +1246,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java">
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79026216">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
           <folding>
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2714#2715#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53932583">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java">
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
           <folding>
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1360,18 +1279,40 @@
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java">
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22097379">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53932583">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -25,8 +25,16 @@ public class MemoryAccess
         Checklist[] lists = Memory.retrieveAllLists(context);
         String[] outlet = null;
 
-        // TODO Turn lists into Strings
-        // TODO Add lists to outlet
+        if (lists != null) {
+            outlet = new String[lists.length];
+            for (int i = 0; i < lists.length; ++i) {
+                if (lists[i] != null) {
+                    outlet[i] = lists[i].toString();
+                } else {
+                    return null;
+                }
+            }
+        }
 
         return outlet;
     }
