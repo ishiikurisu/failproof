@@ -54,5 +54,6 @@ public class Memory
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
+        editor.commit();
     }
 }
