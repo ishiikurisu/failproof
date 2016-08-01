@@ -43,7 +43,7 @@ public class MainActivity
         Context context = getApplicationContext();
         LinearLayout layoutMain = (LinearLayout) findViewById(R.id.layoutMain);
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollLists);
-        String[] lists = view.getLists(context);
+        String[] lists = view.getStuff(context);
 
         if (lists == null)
             scroll = view.resetScroll(context);

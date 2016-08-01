@@ -4,11 +4,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Class to edit memory information
  */
 public class Memory
 {
+    // TODO Rewrite this method to use `retrieveAllCodes`
     /**
      * Retrieve all lists in memory
      *
@@ -50,10 +54,41 @@ public class Memory
         editor.apply();
     }
 
+    /**
+     * Deletes everything in memory
+     *
+     * @param context The application's context
+     */
     public static void resetMemory(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
         editor.commit();
+    }
+
+    /**
+     * Retrieve all valid addresses to lists
+     *
+     * @param context The application's context
+     * @return An array with all valid addresses
+     */
+    public static String[] retrieveAllCodes(Context context) {
+        List<String> stuff = new ArrayList<>();
+        String[] outlet = null;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        int size = preferences.getInt("size", 0);
+
+        if (size > 0) {
+            for (int i = 0; i < size; ++i) {
+                String code = String.format("%03d", i);
+                String raw = preferences.getString(code, "");
+                if (raw.length() > 0) {
+                    stuff.add(code);
+                }
+            }
+            outlet = stuff.toArray(new String[stuff.size()]);
+        }
+
+        return outlet;
     }
 }

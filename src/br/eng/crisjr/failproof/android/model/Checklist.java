@@ -11,13 +11,14 @@ public class Checklist
 
     public Checklist(String[] list)
     {
-        int limit = list.length - 1;
+        int limit = list.length;
 
         title = list[0];
-        items = new String[limit];
-        checked = new boolean[limit];
+        items = new String[limit - 1];
+        checked = new boolean[limit - 1];
         for (int i = 1; i < limit; ++i) {
-            items[i - 1] = list[i];
+            if (list[i] != null)
+                items[i - 1] = list[i];
             checked[i - 1] = false;
         }
     }
@@ -31,14 +32,13 @@ public class Checklist
 
         for (int i = 1; i < limit; ++i) {
             items[i - 1] = data[i].substring(1);
-            if (data[i].charAt(0) == '*') {
-                checked[i - 1] = true;
-            } else {
-                checked[i - 1] = false;
-            }
+            checked[i - 1] = data[i].charAt(0) == '*';
         }
     }
 
+    public String getTitle() {
+        return this.title;
+    }
 
     public String toString()
     {
@@ -47,11 +47,7 @@ public class Checklist
 
         for (int i = 0; i < limit; ++i) {
             String box = "\n";
-            if (checked[i]) {
-                box += "*";
-            } else {
-                box += "-";
-            }
+            box += (checked[i]) ? "*" : "-";
             outlet += box + items[i];
         }
 

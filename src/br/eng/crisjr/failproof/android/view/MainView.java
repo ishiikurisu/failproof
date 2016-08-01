@@ -9,6 +9,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import br.eng.crisjr.failproof.android.R;
 import br.eng.crisjr.failproof.android.controller.MemoryAccess;
+import br.eng.crisjr.failproof.web;
 
 /**
  * Monster to create views and controllers for main screen
@@ -25,6 +26,16 @@ public class MainView
      */
     public String[] getLists(Context context) {
         return new MemoryAccess(context).loadLists();
+    }
+
+    /**
+     * Load basic information from memory
+     *
+     * @param context The application's context
+     * @return An array containing pairs "Title\nAddress"
+     */
+    public String[] getStuff(Context context) {
+        return new MemoryAccess(context).loadStuff(context);
     }
 
     /**
@@ -51,8 +62,6 @@ public class MainView
         return scroll;
     }
 
-    // TODO create static method for adding a list of titles to a scroll
-
     /**
      * Creates a scroll with many lists
      *
@@ -60,21 +69,23 @@ public class MainView
      * @param lists   The lists available
      * @return The scroll populated with the lists
      */
-    public ScrollView createScroll(Context context, String[] lists) {
+    public ScrollView createScroll(Context context, String[] stuff) {
         ScrollView scroll = new ScrollView(context);
-        LinearLayout stuff = new LinearLayout(context);
+        LinearLayout box = new LinearLayout(context);
+        int limit = stuff.length;
+        String[] titles = web.toLists(stuff);
+        String[] addresses = web.toLinks(stuff);
 
-        stuff.setOrientation(LinearLayout.VERTICAL);
-        for (String list : lists) {
-            // TODO extract list title and memory address
+        box.setOrientation(LinearLayout.VERTICAL);
+        for (int i = 0; i < limit; ++i) {
             TextView tv = new TextView(context);
-            tv.setText(list);
+            tv.setText(titles[i]);
             tv.setTextSize(20);
             // TODO Add callback to list item
-            stuff.addView(tv);
+            box.addView(tv);
         }
 
-        scroll.addView(stuff);
+        scroll.addView(box);
         return scroll;
     }
 

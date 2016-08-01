@@ -36,6 +36,28 @@ public class MemoryAccess
     }
 
     /**
+     * Loads basic information from memory
+     *
+     * @param context The application's context
+     * @return An array containing pairs "Address\nTitle"
+     */
+    public String[] loadStuff(Context context) {
+        Checklist[] lists = Memory.retrieveAllLists(context);
+        String[] codes = Memory.retrieveAllCodes(context);
+        String[] outlet = null;
+
+        if (lists != null) {
+            int limit = lists.length;
+            outlet = new String[limit];
+            for (int i = 0; i < limit; ++i) {
+                outlet[i] = codes[i] + "\n" + lists[i].getTitle();
+            }
+        }
+
+        return outlet;
+    }
+
+    /**
      * Adds a new checklist to memory
      * @param list the list to be saved as provided by the internet
      */
