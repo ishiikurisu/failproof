@@ -45,12 +45,10 @@ public class MainActivity
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollLists);
         String[] lists = view.getLists(context);
 
-        if (lists == null) {
+        if (lists == null)
             scroll = view.resetScroll(context);
-        } else {
-            // TODO Create scroll
-            Toast.makeText(MainActivity.this, "There is something in memory", Toast.LENGTH_SHORT).show();
-        }
+        else
+            scroll = view.createScroll(context, lists);
 
         scroll.setId(R.id.scrollLists);
         view.replaceScroll(layoutMain, scroll);

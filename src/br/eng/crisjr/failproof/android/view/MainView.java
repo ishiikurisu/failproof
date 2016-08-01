@@ -54,6 +54,31 @@ public class MainView
     // TODO create static method for adding a list of titles to a scroll
 
     /**
+     * Creates a scroll with many lists
+     *
+     * @param context The application's context
+     * @param lists   The lists available
+     * @return The scroll populated with the lists
+     */
+    public ScrollView createScroll(Context context, String[] lists) {
+        ScrollView scroll = new ScrollView(context);
+        LinearLayout stuff = new LinearLayout(context);
+
+        stuff.setOrientation(LinearLayout.VERTICAL);
+        for (String list : lists) {
+            // TODO extract list title and memory address
+            TextView tv = new TextView(context);
+            tv.setText(list);
+            tv.setTextSize(20);
+            // TODO Add callback to list item
+            stuff.addView(tv);
+        }
+
+        scroll.addView(stuff);
+        return scroll;
+    }
+
+    /**
      * Places the newly created scroll in the main layout.
      * @param linear The main layout on the screen
      * @param scroll The layout to store the lists
@@ -80,6 +105,10 @@ public class MainView
         return linear;
     }
 
+    /**
+     * Delete all lists in memory
+     * @param context The application's context
+     */
     public void resetMemory(Context context) {
         new MemoryAccess(context).resetMemory();
     }
