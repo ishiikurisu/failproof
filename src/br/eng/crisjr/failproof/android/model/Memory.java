@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class Memory
 {
-    // TODO Rewrite this method to use `retrieveAllCodes`
     /**
      * Retrieve all lists in memory
      *
@@ -23,15 +22,13 @@ public class Memory
     {
         Checklist[] outlet = null;
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        int size = preferences.getInt("size", 0);
+        String[] codes = retrieveAllCodes(context);
 
-        if (size > 0) {
-            outlet = new Checklist[size];
-            for (int i = 0; i < size; ++i) {
-                String raw = preferences.getString(String.format("%03d", i), "");
-                if (raw.length() > 0) {
-                    outlet[i] = new Checklist(raw);
-                }
+        if (codes != null) {
+            outlet = new Checklist[codes.length];
+            int i = 0;
+            for (String code : codes) {
+                outlet[i++] = new Checklist(preferences.getString(code, ""));
             }
         }
 

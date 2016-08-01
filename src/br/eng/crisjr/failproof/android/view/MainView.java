@@ -66,7 +66,7 @@ public class MainView
      * Creates a scroll with many lists
      *
      * @param context The application's context
-     * @param lists   The lists available
+     * @param stuff   The lists available
      * @return The scroll populated with the lists
      */
     public ScrollView createScroll(Context context, String[] stuff) {
