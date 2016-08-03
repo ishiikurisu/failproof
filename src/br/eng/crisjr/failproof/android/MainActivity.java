@@ -48,7 +48,7 @@ public class MainActivity
         if (lists == null)
             scroll = view.resetScroll(context);
         else
-            scroll = view.createScroll(context, lists);
+            scroll = view.createScroll(context, this, lists);
 
         scroll.setId(R.id.scrollLists);
         view.replaceScroll(layoutMain, scroll);

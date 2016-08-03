@@ -22,5 +22,8 @@
         <activity android:name=".LinkActivity"
                   android:label="Download"
                   android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <activity android:name=".ListActivity"
+                  android:label="Checklist"
+                  android:theme="@android:style/Theme.Holo.NoActionBar"/>
     </application>
 </manifest>

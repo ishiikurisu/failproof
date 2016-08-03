@@ -1,12 +1,15 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import br.eng.crisjr.failproof.android.ListActivity;
+import br.eng.crisjr.failproof.android.MainActivity;
 import br.eng.crisjr.failproof.android.R;
 import br.eng.crisjr.failproof.android.controller.MemoryAccess;
 import br.eng.crisjr.failproof.web;
@@ -19,7 +22,7 @@ public class MainView
     public static final int SAVE_REQUEST = 0;
 
     /**
-     * Load lists from the memory.
+     * Load all lists from memory.
      *
      * @param context The application's context.
      * @return returns an array of strings with the lists' names if they exist, otherwise null.
@@ -69,7 +72,7 @@ public class MainView
      * @param stuff   The lists available
      * @return The scroll populated with the lists
      */
-    public ScrollView createScroll(Context context, String[] stuff) {
+    public ScrollView createScroll(Context context, MainActivity activity, String[] stuff) {
         ScrollView scroll = new ScrollView(context);
         LinearLayout box = new LinearLayout(context);
         int limit = stuff.length;
@@ -79,14 +82,34 @@ public class MainView
         box.setOrientation(LinearLayout.VERTICAL);
         for (int i = 0; i < limit; ++i) {
             TextView tv = new TextView(context);
-            tv.setText(titles[i]);
+            String title = titles[i];
+            String address = addresses[i];
+            tv.setText(title);
             tv.setTextSize(20);
-            // TODO Add callback to list item
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    textTitle_onClick(context, activity, address);
+                }
+            });
             box.addView(tv);
         }
 
         scroll.addView(box);
         return scroll;
+    }
+
+    /**
+     * Callback to a list title on the main screen. Will call another activity for the chosen list
+     *
+     * @param context  The application's context
+     * @param activity The main activity
+     * @param address  The list's memory address
+     */
+    private void textTitle_onClick(Context context, MainActivity activity, String address) {
+        Intent intent = new Intent(context, ListActivity.class);
+        intent.putExtra("address", address);
+        activity.startActivity(intent);
     }
 
     /**
