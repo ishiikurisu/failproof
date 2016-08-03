@@ -36,12 +36,23 @@ public class MemoryAccess
     }
 
     /**
+     * Loads a checklist from memory
+     *
+     * @param address The list address
+     * @return The chosen checklist
+     */
+    public Checklist loadList(String address) {
+        return Memory.retrieveList(context, address);
+    }
+
+    /**
      * Loads basic information from memory
      *
      * @param context The application's context
      * @return An array containing pairs "Address\nTitle"
      */
-    public String[] loadStuff(Context context) {
+    public String[] loadStuff(Context context)
+    {
         Checklist[] lists = Memory.retrieveAllLists(context);
         String[] codes = Memory.retrieveAllCodes(context);
         String[] outlet = null;
@@ -66,6 +77,9 @@ public class MemoryAccess
         Memory.store(this.context, checklist);
     }
 
+    /**
+     * Erases everything in memory
+     */
     public void resetMemory() {
         Memory.resetMemory(context);
     }

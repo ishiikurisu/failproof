@@ -14,8 +14,6 @@ public class ListActivity
         extends Activity {
     private ChecklistView view = new ChecklistView();
 
-    /* TODO Make this activity useful */
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +21,9 @@ public class ListActivity
 
         // Setting up list
         String address = getIntent().getStringExtra("address");
-        Toast.makeText(ListActivity.this, address, Toast.LENGTH_SHORT).show();
-//        TextView title = (TextView) findViewById(R.id.textChecklistTitle);
-//        Checklist checklist = view.loadList(address);
-//        title.setText(checklist.getTitle());
+        TextView title = (TextView) findViewById(R.id.textChecklistTitle);
+        Checklist checklist = view.loadList(getApplicationContext(), address);
+        title.setText(checklist.getTitle());
+        // TODO Add checklist items to screen along stuff to check them
     }
 }

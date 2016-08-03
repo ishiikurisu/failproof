@@ -88,4 +88,23 @@ public class Memory
 
         return outlet;
     }
+
+    /**
+     * Retrieve a checklist from memory
+     *
+     * @param context The application's context
+     * @param code    The list address
+     * @return The chosen checklist
+     */
+    public static Checklist retrieveList(Context context, String code) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String raw = preferences.getString(code, "");
+        Checklist outlet = null;
+
+        if (raw.length() > 0) {
+            outlet = new Checklist(raw);
+        }
+
+        return outlet;
+    }
 }
