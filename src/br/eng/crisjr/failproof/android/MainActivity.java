@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
-import br.eng.crisjr.failproof.android.controller.MemoryAccess;
 import br.eng.crisjr.failproof.android.view.MainView;
 
 /**
@@ -95,4 +94,6 @@ public class MainActivity
                 break;
         }
     }
+
+    // TODO Add possibility to delete checklists
 }

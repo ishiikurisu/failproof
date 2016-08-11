@@ -9,8 +9,9 @@
               android:layout_gravity="center"
               android:id="@+id/textChecklistTitle"/>
     <ScrollView android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-        <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollChecklist">
+        <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
                       android:id="@+id/layoutChecklist">

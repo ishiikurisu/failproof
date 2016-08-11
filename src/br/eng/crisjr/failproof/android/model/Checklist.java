@@ -40,6 +40,14 @@ public class Checklist
         return this.title;
     }
 
+    public String[] getItems() {
+        return items;
+    }
+
+    public boolean[] getChecked() {
+        return checked;
+    }
+
     public String toString()
     {
         String outlet = title;

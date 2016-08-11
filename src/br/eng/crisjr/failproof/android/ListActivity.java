@@ -2,6 +2,8 @@ package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import br.eng.crisjr.failproof.android.model.Checklist;
@@ -24,6 +26,17 @@ public class ListActivity
         TextView title = (TextView) findViewById(R.id.textChecklistTitle);
         Checklist checklist = view.loadList(getApplicationContext(), address);
         title.setText(checklist.getTitle());
-        // TODO Add checklist items to screen along stuff to check them
+
+        // Drawing checklist
+        replaceScroll(checklist);
     }
+
+    private void replaceScroll(Checklist checklist) {
+        LinearLayout layout = view.drawChecklist(getApplicationContext(), this, checklist);
+        layout.setId(R.id.layoutChecklist);
+        ScrollView scroll = (ScrollView) findViewById(R.id.scrollChecklist);
+        scroll = view.replaceScroll(scroll, layout);
+    }
+
+    // TODO Save checklist on memory before leaving screen
 }
