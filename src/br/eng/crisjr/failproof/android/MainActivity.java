@@ -35,7 +35,7 @@ public class MainActivity
     /**
      * Checks if it must update the lists on the screen.
      * It resets the scroll if there are no lists in memory by showing an "I'm empty" message,
-     * or shows the lists to be accessed. Currently, not showing stored lists.
+     * or shows the lists to be accessed.
      */
     private void updateLists()
     {
@@ -77,6 +77,17 @@ public class MainActivity
         }
 
         Toast.makeText(getApplicationContext(), output, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Callback to a list title on the main screen. Will call another activity for the chosen list
+     *
+     * @param address The list's memory address
+     */
+    public void textTitle_onClick(String address) {
+        Intent intent = new Intent(getApplicationContext(), ListActivity.class);
+        intent.putExtra("address", address);
+        startActivity(intent);
     }
 
     /**

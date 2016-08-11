@@ -89,7 +89,7 @@ public class MainView
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    textTitle_onClick(context, activity, address);
+                    activity.textTitle_onClick(address);
                 }
             });
             box.addView(tv);
@@ -97,19 +97,6 @@ public class MainView
 
         scroll.addView(box);
         return scroll;
-    }
-
-    /**
-     * Callback to a list title on the main screen. Will call another activity for the chosen list
-     *
-     * @param context  The application's context
-     * @param activity The main activity
-     * @param address  The list's memory address
-     */
-    private void textTitle_onClick(Context context, MainActivity activity, String address) {
-        Intent intent = new Intent(context, ListActivity.class);
-        intent.putExtra("address", address);
-        activity.startActivity(intent);
     }
 
     /**
