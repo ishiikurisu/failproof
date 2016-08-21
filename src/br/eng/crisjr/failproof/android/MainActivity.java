@@ -43,12 +43,7 @@ public class MainActivity
         LinearLayout layoutMain = (LinearLayout) findViewById(R.id.layoutMain);
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollLists);
         String[] lists = view.getStuff(context);
-
-        if (lists == null)
-            scroll = view.resetScroll(context);
-        else
-            scroll = view.createScroll(context, this, lists);
-
+        scroll = (lists == null) ? view.resetScroll(context) : view.createScroll(context, this, lists);
         scroll.setId(R.id.scrollLists);
         view.replaceScroll(layoutMain, scroll);
     }
