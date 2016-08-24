@@ -31,12 +31,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Extracti">
+    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Extracting checklist from view">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
     </list>
     <ignored path="Failproof.iws" />
@@ -59,10 +60,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4494382">
+            <state vertical-scroll-proportion="0.0">
               <caret line="81" column="81" selection-start-line="81" selection-start-column="81" selection-end-line="81" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,18 +76,22 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChecklistView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChecklistView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-              <folding />
+            <state vertical-scroll-proportion="0.8202247">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1891#1892#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +100,9 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+              <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
               <folding>
+                <element signature="e#991#992#0" expanded="true" />
                 <element signature="e#1051#1052#0" expanded="true" />
               </folding>
             </state>
@@ -107,10 +113,8 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,14 +171,14 @@
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java" />
         <option value="$PROJECT_DIR$/res/layout/checklist.xml" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -881,7 +885,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472048337741</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Extracting checklist from view">
+      <created>1472049109511</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1472049109511</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -937,7 +947,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Preparing search screen for downloading lists" />
     <MESSAGE value="About to pass responsibility to view object" />
     <MESSAGE value="Let's think about how we will turn these text views into buttons" />
     <MESSAGE value="Parsing raw stuff to lists and links though API" />
@@ -962,7 +971,8 @@
     <MESSAGE value="Organizing a little architecture detail" />
     <MESSAGE value="Changing one line for the sake of brevity" />
     <MESSAGE value="Preparing ground to extract checklist from view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparing ground to extract checklist from view" />
+    <MESSAGE value="Extracting checklist from view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extracting checklist from view" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1344,6 +1354,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="81" selection-start-line="81" selection-start-column="81" selection-end-line="81" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Checklist.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1355,17 +1375,7 @@
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1373,27 +1383,30 @@
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding>
+            <element signature="e#991#992#0" expanded="true" />
             <element signature="e#1051#1052#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4494382">
-          <caret line="81" column="81" selection-start-line="81" selection-start-column="81" selection-end-line="81" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.8202247">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1891#1892#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
           </folding>
         </state>
       </provider>

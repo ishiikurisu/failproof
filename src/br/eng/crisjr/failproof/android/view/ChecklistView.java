@@ -49,7 +49,6 @@ public class ChecklistView {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // TODO Save checklist on memory after changes
                     activity.radio_onClick(v);
                 }
             });
@@ -98,5 +97,15 @@ public class ChecklistView {
         }
 
         return outlet;
+    }
+
+    /**
+     * Saves the given checklist on that memory address
+     *
+     * @param address   The memory address
+     * @param checklist the checklist to be saved
+     */
+    public void saveChecklistOnMemory(Context context, String address, String checklist) {
+        new MemoryAccess(context).store(address, checklist);
     }
 }

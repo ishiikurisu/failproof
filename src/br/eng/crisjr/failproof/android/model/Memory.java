@@ -52,6 +52,20 @@ public class Memory
     }
 
     /**
+     * Stores a checklist on memory under its position on memory
+     *
+     * @param context   The application's context
+     * @param checklist The checklist object to be saved
+     */
+    public static void store(Context context, String address, Checklist checklist) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(String.format(address), checklist.toString());
+        editor.commit();
+        editor.apply();
+    }
+
+    /**
      * Deletes everything in memory
      *
      * @param context The application's context

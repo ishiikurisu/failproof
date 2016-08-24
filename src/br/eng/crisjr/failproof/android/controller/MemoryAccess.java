@@ -83,4 +83,9 @@ public class MemoryAccess
     public void resetMemory() {
         Memory.resetMemory(context);
     }
+
+    public void store(String address, String raw) {
+        Checklist checklist = new Checklist(raw);
+        Memory.store(context, address, checklist);
+    }
 }
