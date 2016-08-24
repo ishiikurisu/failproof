@@ -1,11 +1,9 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.ScrollView;
-import android.widget.TextView;
+import android.widget.*;
 import br.eng.crisjr.failproof.android.ListActivity;
 import br.eng.crisjr.failproof.android.controller.MemoryAccess;
 import br.eng.crisjr.failproof.android.model.Checklist;
@@ -49,13 +47,19 @@ public class ChecklistView {
             // TODO make each line good looking
             RadioButton button = new RadioButton(context);
             button.setChecked(checked[i]);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO Save checklist on memory after changes
+                    activity.radio_onClick(v);
+                }
+            });
             TextView text = new TextView(context);
             text.setText(items[i]);
             LinearLayout line = new LinearLayout(context);
             line.addView(button);
             line.addView(text);
             layout.addView(line);
-            // TODO Save checklist on memory after changes
         }
 
         return layout;
@@ -72,5 +76,19 @@ public class ChecklistView {
         scroll.removeAllViews();
         scroll.addView(layout);
         return scroll;
+    }
+
+    /**
+     * Extracts checklist coded in view objects
+     *
+     * @param scroll The scroll containing the checklist
+     * @return the string in checklist pattern
+     */
+    public String extractChecklist(ScrollView scroll) {
+        String outlet = "TODO EXTRACT CHECKLIST";
+
+        // TODO Extract list coded in view objects
+
+        return outlet;
     }
 }

@@ -2,6 +2,7 @@ package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -39,4 +40,8 @@ public class ListActivity
     }
 
     // TODO Save checklist on memory before leaving screen
+    public void radio_onClick(View v) {
+        String checklist = view.extractChecklist((ScrollView) findViewById(R.id.scrollChecklist));
+        Toast.makeText(getApplicationContext(), checklist, Toast.LENGTH_SHORT).show();
+    }
 }
