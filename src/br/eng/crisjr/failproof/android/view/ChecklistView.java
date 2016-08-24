@@ -2,7 +2,6 @@ package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 import br.eng.crisjr.failproof.android.ListActivity;
 import br.eng.crisjr.failproof.android.controller.MemoryAccess;
@@ -82,12 +81,21 @@ public class ChecklistView {
      * Extracts checklist coded in view objects
      *
      * @param scroll The scroll containing the checklist
-     * @return the string in checklist pattern
+     * @return the string in virtual checklist format
      */
     public String extractChecklist(ScrollView scroll) {
-        String outlet = "TODO EXTRACT CHECKLIST";
+        LinearLayout layout = (LinearLayout) scroll.getChildAt(0);
+        String outlet = "";
 
-        // TODO Extract list coded in view objects
+        for (int i = 0; i < layout.getChildCount(); ++i) {
+            LinearLayout line = (LinearLayout) layout.getChildAt(i);
+            RadioButton button = (RadioButton) line.getChildAt(0);
+            TextView text = (TextView) line.getChildAt(1);
+
+            outlet += (button.isChecked()) ? "*" : "-";
+            outlet += text.getText().toString();
+            outlet += "\n";
+        }
 
         return outlet;
     }

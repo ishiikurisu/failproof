@@ -41,7 +41,10 @@ public class ListActivity
 
     // TODO Save checklist on memory before leaving screen
     public void radio_onClick(View v) {
-        String checklist = view.extractChecklist((ScrollView) findViewById(R.id.scrollChecklist));
+        TextView title = (TextView) findViewById(R.id.textChecklistTitle);
+        String checklist = title.getText() + "\n" +
+                view.extractChecklist((ScrollView) findViewById(R.id.scrollChecklist));
+        // TODO Save checklist on memory
         Toast.makeText(getApplicationContext(), checklist, Toast.LENGTH_SHORT).show();
     }
 }

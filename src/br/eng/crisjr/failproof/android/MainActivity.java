@@ -79,7 +79,7 @@ public class MainActivity
      *
      * @param address The list's memory address
      */
-    public void textTitle_onClick(String address) {
+    public void textTitle_onClick(String address) { // this is cheating, ya know?
         Intent intent = new Intent(getApplicationContext(), ListActivity.class);
         intent.putExtra("address", address);
         startActivity(intent);
