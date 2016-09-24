@@ -13,8 +13,7 @@ import br.eng.crisjr.failproof.android.view.ChecklistView;
 /**
  * Activity to display a usable checklist
  */
-public class ListActivity
-        extends Activity {
+public class ListActivity extends Activity {
     private ChecklistView view = new ChecklistView();
 
     @Override
