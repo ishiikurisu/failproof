@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 import br.eng.crisjr.failproof.android.model.Checklist;
 import br.eng.crisjr.failproof.android.view.ChecklistView;
 
