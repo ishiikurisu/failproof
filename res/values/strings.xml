@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Failproof Checklists</string>
-    <string name="empty_lists">Your lists are empty :(\nHow about adding some?</string>
+    <string name="empty_lists">Your lists are empty :( How about adding some?</string>
     <string name="button_add">Add list</string>
     <string name="search_title">Search lists</string>
-    <string name="loading_text">Now loading...</string>
+    <string name="search_edit">Filter lists</string>
+    <string name="loading_text">Now loading…</string>
 </resources>
