@@ -1,7 +1,6 @@
 package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Toast;
 import br.eng.crisjr.failproof.android.view.MainView;
 
 /**
@@ -50,7 +48,7 @@ public class MainActivity
         Context context = getApplicationContext();
         LinearLayout layoutMain = (LinearLayout) findViewById(R.id.layoutMain);
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollLists);
-        String[] lists = MainView.getStuff(context);
+        String[] lists = MainView.loadStuff(context);
         scroll = (lists == null) ? MainView.resetScroll(context) : MainView.createScroll(context, this, lists);
         scroll.setId(R.id.scrollLists);
         MainView.replaceScroll(layoutMain, scroll);
@@ -65,7 +63,7 @@ public class MainActivity
         Context context = getApplicationContext();
         LinearLayout layoutMain = (LinearLayout) findViewById(R.id.layoutMain);
         ScrollView scroll = (ScrollView) findViewById(R.id.scrollLists);
-        String[] lists = MainView.getStuff(context);
+        String[] lists = MainView.loadStuff(context);
         scroll = (lists == null) ? MainView.resetScroll(context) : MainView.createKillerScroll(context, this, lists);
         scroll.setId(R.id.scrollLists);
         MainView.replaceScroll(layoutMain, scroll);
@@ -84,7 +82,7 @@ public class MainActivity
 
     // TODO Add possibility to delete checklists
     /**
-     * Callback to ? button
+     * Callback to x button. Toggles the delete mode.
      * @param view I don't know why this argument is here either
      */
     public void onClick_buttonRandom(View view) {
@@ -127,8 +125,10 @@ public class MainActivity
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         switch (resultCode) {
             case MainView.SAVE_REQUEST:
-                if (!view.getMode()) updateLists();
-                else enableListsDestruction();
+                if (!view.getMode())
+                    updateLists();
+                else
+                    enableListsDestruction();
                 break;
         }
     }

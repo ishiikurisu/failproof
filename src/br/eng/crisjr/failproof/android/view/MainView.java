@@ -31,7 +31,7 @@ public class MainView
      * @param context The application's context.
      * @return returns an array of strings with the lists' names if they exist, otherwise null.
      */
-    public static String[] getLists(Context context) {
+    public static String[] loadLists(Context context) {
         return new MemoryAccess(context).loadLists();
     }
 
@@ -41,7 +41,7 @@ public class MainView
      * @param context The application's context
      * @return An array containing pairs "Title\nAddress"
      */
-    public static String[] getStuff(Context context) {
+    public static String[] loadStuff(Context context) {
         return new MemoryAccess(context).loadStuff(context);
     }
 
