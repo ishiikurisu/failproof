@@ -1,14 +1,12 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import br.eng.crisjr.failproof.android.ListActivity;
 import br.eng.crisjr.failproof.android.MainActivity;
 import br.eng.crisjr.failproof.android.R;
 import br.eng.crisjr.failproof.android.controller.MemoryAccess;
@@ -19,6 +17,12 @@ import br.eng.crisjr.failproof.web;
  */
 public class MainView
 {
+    /*
+     * ====================
+     * STATELESS PROCEDURES
+     * ====================
+     */
+
     public static final int SAVE_REQUEST = 0;
 
     /**
@@ -27,7 +31,7 @@ public class MainView
      * @param context The application's context.
      * @return returns an array of strings with the lists' names if they exist, otherwise null.
      */
-    public String[] getLists(Context context) {
+    public static String[] getLists(Context context) {
         return new MemoryAccess(context).loadLists();
     }
 
@@ -37,7 +41,7 @@ public class MainView
      * @param context The application's context
      * @return An array containing pairs "Title\nAddress"
      */
-    public String[] getStuff(Context context) {
+    public static String[] getStuff(Context context) {
         return new MemoryAccess(context).loadStuff(context);
     }
 
@@ -46,7 +50,7 @@ public class MainView
      * @param context The application's context
      * @return the new scroll
      */
-    public ScrollView resetScroll(Context context)
+    public static ScrollView resetScroll(Context context)
     {
         ScrollView scroll = new ScrollView(context);
         TextView tv = new TextView(context);
@@ -72,18 +76,18 @@ public class MainView
      * @param stuff   The lists available
      * @return The scroll populated with the lists
      */
-    public ScrollView createScroll(Context context, MainActivity activity, String[] stuff) {
+    public static ScrollView createScroll(Context context, MainActivity activity, String[] stuff) {
         ScrollView scroll = new ScrollView(context);
         LinearLayout box = new LinearLayout(context);
+        MainView view = activity.getView();
         int limit = stuff.length;
-        String[] titles = web.toLists(stuff);
-        String[] addresses = web.toLinks(stuff);
 
+        view.setStuff(stuff);
         box.setOrientation(LinearLayout.VERTICAL);
         for (int i = 0; i < limit; ++i) {
             TextView tv = new TextView(context);
-            String title = titles[i];
-            String address = addresses[i];
+            String title = view.getNthTitle(i);
+            String address = view.getNthAddress(i);
             tv.setText(title);
             tv.setTextSize(20);
             tv.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +109,7 @@ public class MainView
      * @param scroll The layout to store the lists
      * @return The new main layout
      */
-    public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll)
+    public static LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll)
     {
         int howMany = linear.getChildCount();
         View[] views = new View[howMany];
@@ -130,8 +134,52 @@ public class MainView
      * Delete all lists in memory
      * @param context The application's context
      */
-    public void resetMemory(Context context) {
+    public static void resetMemory(Context context) {
         new MemoryAccess(context).resetMemory();
+    }
+
+    /**
+     * Creates a scroll that enables the destruction of lists.
+     *
+     * @param context  The application's context.
+     * @param activity The current activity.
+     * @param stuff    The lists.
+     * @return null because this method is implemented yet.
+     */
+    public static ScrollView createKillerScroll(Context context, MainActivity activity, String[] stuff) {
+        // TODO Implement this creator
+        return null;
+    }
+
+    /*
+     * =============
+     * STATE METHODS
+     * =============
+     */
+    private boolean mode = false;
+    private String[] titles = null;
+    private String[] addresses = null;
+
+    public boolean getMode() {
+        return mode;
+    }
+
+    public boolean setMode(boolean mode) {
+        this.mode = mode;
+        return getMode();
+    }
+
+    public void setStuff(String[] stuff) {
+        this.titles = web.toLists(stuff);
+        this.addresses = web.toLinks(stuff);
+    }
+
+    public String getNthTitle(int n) {
+        return this.titles[n];
+    }
+
+    public String getNthAddress(int n) {
+        return this.addresses[n];
     }
 
 }
