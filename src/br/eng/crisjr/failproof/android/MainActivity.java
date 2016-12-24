@@ -33,7 +33,6 @@ public class MainActivity
         controller.updateView();
     }
 
-    // TODO Add possibility to download lists
     /**
      * Callback to + button. Will call another activity to show lists available on the internet.
      * @param view I don't know why this argument is here
@@ -56,6 +55,7 @@ public class MainActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // TODO Actually receive checklist
         controller.receiveChecklist();
     }
 }

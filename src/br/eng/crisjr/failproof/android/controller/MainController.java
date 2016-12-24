@@ -39,7 +39,6 @@ public class MainController {
      * Calls the search checklist activity to enable the user to pick a checklist.s
      */
     public void searchChecklists() {
-        // TODO Actually start search activity
         view.searchNewLists();
     }
 
@@ -47,6 +46,7 @@ public class MainController {
      * Called when search activity is finished.
      */
     public void receiveChecklist() {
+        // TODO Actually receive checklists
         updateView();
     }
 }
