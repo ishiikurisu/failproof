@@ -39,6 +39,7 @@ public class MainActivity
      * @param view I don't know why this argument is here
      */
     public void onClick_buttonAdd(View view) {
+        controller.addChecklist();
     }
 
     // TODO Add possibility to delete checklists

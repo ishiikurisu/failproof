@@ -34,4 +34,12 @@ public class MainController {
             // TODO Draw lists on screen
         }
     }
+
+    /**
+     * Calls the search checklist activity to enable the user to pick a checklist
+     */
+    public void addChecklist() {
+        // TODO Actually start search activity
+        view.startSearchActivity();
+    }
 }
