@@ -49,4 +49,13 @@ public class MainActivity
      */
     public void onClick_buttonRandom(View view) {
     }
+
+    /**
+     * Receives data from previous activities.
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        controller.receiveChecklist();
+    }
 }

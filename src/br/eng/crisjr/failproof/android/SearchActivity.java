@@ -1,11 +1,15 @@
 package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.controller.SearchController;
 import br.eng.crisjr.failproof.android.model.SearchModel;
+import br.eng.crisjr.failproof.android.view.LinkView;
+import br.eng.crisjr.failproof.android.view.MainView;
 import br.eng.crisjr.failproof.android.view.SearchView;
 
 /**
@@ -41,6 +45,26 @@ public class SearchActivity extends Activity {
 
         if (expected.equals(collected)) {
             editSearch.setText("");
+        }
+    }
+
+    /**
+     * Method to receive the results of the child activities
+     *
+     * @param requestCode The code to the requested activity
+     * @param resultCode  The result of the operation
+     * @param intent      The intent sent to the activity
+     */
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        // TODO Move this code to view class
+        switch (resultCode) {
+            case LinkView.CANCEL_PLEASE:
+                Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_SHORT).show();
+                break;
+            case LinkView.SAVE_PLEASE:
+                setResult(MainView.SAVE_REQUEST);
+                finish();
+                break;
         }
     }
 }

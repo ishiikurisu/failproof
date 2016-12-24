@@ -58,6 +58,7 @@ public class LinkActivity extends Activity {
      */
     public void onClick_buttonSave(View v) {
         // TODO Save checklist
+        controller.saveChecklist();
     }
 
 }

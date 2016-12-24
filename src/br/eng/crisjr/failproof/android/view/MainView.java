@@ -19,6 +19,8 @@ import br.eng.crisjr.failproof.android.controller.MainController;
 public class MainView {
     protected MainActivity activity = null;
     protected MainController controller = null;
+    public static int SAVE_REQUEST = 1;
+    public static int CANCEL_REQUEST = 2;
 
     public MainView(MainActivity activity) {
         this.activity = activity;
@@ -29,6 +31,9 @@ public class MainView {
         return this.controller;
     }
 
+    /**
+     * Creates an empty view with a message suggesting downloading new checklists.
+     */
     public void drawEmptyView() {
         LinearLayout layoutMain = (LinearLayout) activity.findViewById(R.id.layoutMain);
         ScrollView scroll = resetScroll();
@@ -89,8 +94,11 @@ public class MainView {
 
     /* OTHER ACTIVITIES */
 
+    /**
+     * Starts a new activity to download checklists.
+     */
     public void searchNewLists() {
         Intent intent = new Intent(activity, SearchActivity.class);
-        activity.startActivity(intent);
+        activity.startActivityForResult(intent, SAVE_REQUEST);
     }
 }

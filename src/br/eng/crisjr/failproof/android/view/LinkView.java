@@ -29,7 +29,13 @@ public class LinkView {
         return controller;
     }
 
+    /**
+     * Draws the given checklist on screen.
+     *
+     * @param list A raw checklist, as described on API.
+     */
     public void updateStuff(String[] list) {
+        // TODO Make save button available only after list is downloaded
         ScrollView scrollView = createScroll(activity.getApplicationContext(), list);
         LinearLayout linearLayout = (LinearLayout) activity.findViewById(R.id.linearInfo);
         scrollView.setId(R.id.scrollInfo);
@@ -44,7 +50,7 @@ public class LinkView {
      * @param list    The list, as provided by the internet
      * @return The scroll view with the layout and the
      */
-    public ScrollView createScroll(Context context, String[] list) {
+    protected ScrollView createScroll(Context context, String[] list) {
         ScrollView scroll = new ScrollView(context);
         LinearLayout stuff = new LinearLayout(context);
 
@@ -85,8 +91,27 @@ public class LinkView {
      * @param scroll The newly created scroll
      * @return the main layout with the appropriate replacements
      */
-    public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll) {
+    protected LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll) {
         return MainView.replaceScroll(linear, scroll);
     }
 
+    /**
+     * Saves this list on local memory
+     *
+     * @param list the list as provided by the internet
+     */
+    public void saveList(String[] list) {
+        // TODO Move this action to the model class
+        Context context = activity.getApplicationContext();
+        MemoryAccess card = new MemoryAccess(context);
+        card.createList(list);
+    }
+
+    /**
+     * Returns to the main activity after storing the checklist on memory.
+     */
+    public void returnToMainActivity() {
+        activity.setResult(SAVE_PLEASE);
+        activity.finish();
+    }
 }

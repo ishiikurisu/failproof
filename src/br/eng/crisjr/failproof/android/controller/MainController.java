@@ -47,6 +47,6 @@ public class MainController {
      * Called when search activity is finished.
      */
     public void receiveChecklist() {
-
+        updateView();
     }
 }

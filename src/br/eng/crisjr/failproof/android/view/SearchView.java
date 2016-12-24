@@ -66,11 +66,16 @@ public class SearchView
         return scroll;
     }
 
+    /**
+     * Callback to each link item.
+     *
+     * @param link the link to the checklist.
+     */
     public void list_onClick(String link) {
         // TODO Start new activity for this link
         Intent intent = new Intent(activity, LinkActivity.class);
         intent.putExtra("link", link);
-        activity.startActivity(intent);
+        activity.startActivityForResult(intent, LinkView.LINK_REQUEST);
     }
 
 
