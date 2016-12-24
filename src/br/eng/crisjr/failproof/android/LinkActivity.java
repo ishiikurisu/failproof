@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import br.eng.crisjr.failproof.android.controller.AccessResultant;
-import br.eng.crisjr.failproof.android.controller.DatabaseAccess;
+import br.eng.crisjr.failproof.android.model.system.AccessResultant;
+import br.eng.crisjr.failproof.android.model.system.DatabaseAccess;
 import br.eng.crisjr.failproof.android.view.LinkView;
 
 /**

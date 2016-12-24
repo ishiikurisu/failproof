@@ -1,11 +1,10 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import br.eng.crisjr.failproof.android.controller.MemoryAccess;
+import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 
 /**
  * View class for the Link activity

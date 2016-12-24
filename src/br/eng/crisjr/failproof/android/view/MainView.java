@@ -1,6 +1,7 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import br.eng.crisjr.failproof.android.MainActivity;
 import br.eng.crisjr.failproof.android.R;
+import br.eng.crisjr.failproof.android.SearchActivity;
 import br.eng.crisjr.failproof.android.controller.MainController;
 
 /**
@@ -83,5 +85,13 @@ public class MainView {
         }
 
         return linear;
+    }
+
+    /* OTHER ACTIVITIES */
+
+    public void searchNewLists() {
+        String outlet = null;
+        Intent intent = new Intent(activity, SearchActivity.class);
+        activity.startActivity(intent);
     }
 }

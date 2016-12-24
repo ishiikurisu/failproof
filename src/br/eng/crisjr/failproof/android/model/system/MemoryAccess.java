@@ -1,4 +1,4 @@
-package br.eng.crisjr.failproof.android.controller;
+package br.eng.crisjr.failproof.android.model.system;
 
 import android.content.Context;
 import br.eng.crisjr.failproof.android.model.entity.Checklist;
