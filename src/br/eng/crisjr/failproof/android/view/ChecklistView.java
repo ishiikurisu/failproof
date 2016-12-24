@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.*;
 import br.eng.crisjr.failproof.android.ListActivity;
 import br.eng.crisjr.failproof.android.controller.MemoryAccess;
-import br.eng.crisjr.failproof.android.model.Checklist;
+import br.eng.crisjr.failproof.android.model.entity.Checklist;
 
 /**
  * View class for ListActivity

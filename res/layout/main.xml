@@ -25,7 +25,6 @@
                 android:layout_column="1"
                 android:id="@+id/buttonRandom"
                 android:onClick="onClick_buttonRandom"
-                android:background="#FFF123"
                 android:text="x"/>
     </GridLayout>
     <ScrollView android:layout_width="match_parent"

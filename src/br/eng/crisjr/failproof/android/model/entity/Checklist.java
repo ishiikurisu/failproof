@@ -1,4 +1,4 @@
-package br.eng.crisjr.failproof.android.model;
+package br.eng.crisjr.failproof.android.model.entity;
 
 /**
  * Class to model checklists

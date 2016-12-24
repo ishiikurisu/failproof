@@ -62,15 +62,7 @@ public class SearchActivity
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        switch (resultCode) {
-            case LinkView.CANCEL_PLEASE:
-                Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_SHORT).show();
-                break;
-            case LinkView.SAVE_PLEASE:
-                setResult(MainView.SAVE_REQUEST);
-                finish();
-                break;
-        }
+
     }
 
     /**

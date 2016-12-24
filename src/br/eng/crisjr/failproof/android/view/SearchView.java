@@ -31,7 +31,8 @@ public class SearchView
      */
     public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll)
     {
-        return new MainView().replaceScroll(linear, scroll);
+        // return new MainView().replaceScroll(linear, scroll);
+        return null;
     }
 
     /**

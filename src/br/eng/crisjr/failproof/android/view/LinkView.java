@@ -63,7 +63,8 @@ public class LinkView {
      * @return the main layout with the appropriate replacements
      */
     public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll) {
-        return new MainView().replaceScroll(linear, scroll);
+//        return new MainView().replaceScroll(linear, scroll);
+        return null;
     }
 
     /**

@@ -1,8 +1,9 @@
-package br.eng.crisjr.failproof.android.model;
+package br.eng.crisjr.failproof.android.model.entity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import br.eng.crisjr.failproof.android.model.entity.Checklist;
 
 import java.util.ArrayList;
 import java.util.List;

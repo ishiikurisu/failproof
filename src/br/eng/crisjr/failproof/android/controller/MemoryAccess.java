@@ -1,7 +1,8 @@
 package br.eng.crisjr.failproof.android.controller;
 
 import android.content.Context;
-import br.eng.crisjr.failproof.android.model.*;
+import br.eng.crisjr.failproof.android.model.entity.Checklist;
+import br.eng.crisjr.failproof.android.model.entity.Memory;
 
 /**
  * Access to phone's memory, looking for data
