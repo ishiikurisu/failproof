@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.LinkActivity;
+import br.eng.crisjr.failproof.android.R;
 import br.eng.crisjr.failproof.android.SearchActivity;
 import br.eng.crisjr.failproof.android.controller.SearchController;
 import br.eng.crisjr.failproof.web;
@@ -24,9 +26,50 @@ public class SearchView
     }
 
     public SearchController setController(SearchController controller) {
-        // TODO Download checklists
         this.controller = controller;
-        controller.downloadChecklists();
         return this.controller;
     }
+
+    public void updateStuff(String[] lists, String[] links) {
+        ScrollView scroll = createScroll(lists, links);
+        LinearLayout layout = (LinearLayout) activity.findViewById(R.id.linearSearch);
+        scroll.setId(R.id.scrollSearch);
+        MainView.replaceScroll(layout, scroll);
+    }
+
+    /* VIEWS STUFF */
+
+    public ScrollView createScroll(String[] lists, String[] links) {
+        Context context = activity.getApplicationContext();
+        ScrollView scroll = new ScrollView(context);
+        LinearLayout stuff = new LinearLayout(context);
+        int howMany = lists.length;
+
+        stuff.setOrientation(LinearLayout.VERTICAL);
+        for (int i = 0; i < howMany; ++i) {
+            String list = lists[i];
+            String link = links[i];
+            TextView tv = new TextView(context);
+            tv.setText(list);
+            tv.setTextSize(20);
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    list_onClick(link);
+                }
+            });
+            stuff.addView(tv);
+        }
+
+        scroll.addView(stuff);
+
+        return scroll;
+    }
+
+    public void list_onClick(String link) {
+        // TODO Start new activity for this link
+        Toast.makeText(activity.getApplicationContext(), link, Toast.LENGTH_SHORT).show();
+    }
+
+
 }

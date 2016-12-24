@@ -26,6 +26,8 @@ public class SearchActivity extends Activity {
         view = new SearchView(this);
         model = new SearchModel();
         controller = new SearchController(view, model);
+
+        controller.downloadChecklists();
     }
 
     /**

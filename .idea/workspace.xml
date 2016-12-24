@@ -31,23 +31,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Preparing ground for next steps">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/AccessResultant.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/AccessResultant.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/DatabaseAccess.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/DatabaseAccess.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MemoryAccess.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/MemoryAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/br/eng/crisjr/failproof/android/MainActivity.class" afterPath="$PROJECT_DIR$/out/production/Failproof/br/eng/crisjr/failproof/android/MainActivity.class" />
+    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Preparing ground for downloading checklists">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/LinkActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/LinkView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java" />
     </list>
     <ignored path="Failproof.iws" />
@@ -108,48 +96,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.48101267">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49186257">
-              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-              <folding>
-                <element signature="e#644#645#0" expanded="true" />
-                <element signature="e#684#685#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
+                <element signature="e#715#716#0" expanded="true" />
+                <element signature="e#755#756#0" expanded="true" />
+                <element signature="e#1920#1921#0" expanded="true" />
+                <element signature="e#1978#1979#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -205,10 +171,10 @@
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java" />
       </list>
     </option>
   </component>
@@ -442,8 +408,8 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Android_Accelerated_x86" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Android_ARMv7a" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/scripts/cord/hijoe/platforms/android/.gradle" />
   </component>
   <component name="RunManager" selected="Android Application.Failproof">
@@ -1016,7 +982,13 @@
       <option name="project" value="LOCAL" />
       <updated>1482566113009</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Preparing ground for downloading checklists">
+      <created>1482602095779</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1482602095779</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1039,6 +1011,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40925267" sideWeight="0.50329256" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290559" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40791738" sideWeight="0.49670744" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1056,7 +1029,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290559" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1072,7 +1044,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removing memory access from activity" />
     <MESSAGE value="Populating link activity" />
     <MESSAGE value="Implemented cancel button" />
     <MESSAGE value="Preparing terrain to store a checklist on memory" />
@@ -1097,7 +1068,8 @@
     <MESSAGE value="Refactoring..." />
     <MESSAGE value="Restarting project,,," />
     <MESSAGE value="Preparing ground for next steps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparing ground for next steps" />
+    <MESSAGE value="Preparing ground for downloading checklists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparing ground for downloading checklists" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1424,21 +1396,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30476192">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/search.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3076923">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-          <folding>
-            <element signature="e#515#537#0" expanded="true" />
-            <element signature="e#668#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/android-sdk/sources/android-23/android/content/ContextWrapper.java">
@@ -1510,42 +1469,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/search.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3580246">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+          <folding>
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#1920#1921#0" expanded="true" />
+            <element signature="e#1978#1979#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.48101267">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/SearchView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49186257">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
