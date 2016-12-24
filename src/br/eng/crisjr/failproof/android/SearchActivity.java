@@ -56,15 +56,6 @@ public class SearchActivity extends Activity {
      * @param intent      The intent sent to the activity
      */
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        // TODO Move this code to view class
-        switch (resultCode) {
-            case LinkView.CANCEL_PLEASE:
-                Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_SHORT).show();
-                break;
-            case LinkView.SAVE_PLEASE:
-                setResult(MainView.SAVE_REQUEST);
-                finish();
-                break;
-        }
+        view.onActivityResult(requestCode, resultCode, intent);
     }
 }

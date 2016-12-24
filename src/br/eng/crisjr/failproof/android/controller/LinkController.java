@@ -47,7 +47,7 @@ public class LinkController implements AccessResultant {
      * Saves the stored checklist on memory.
      */
     public void saveChecklist() {
-        view.saveList(model.getList());
+        model.store();
         view.returnToMainActivity();
     }
 }

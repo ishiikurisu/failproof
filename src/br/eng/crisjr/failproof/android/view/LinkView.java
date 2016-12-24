@@ -96,18 +96,6 @@ public class LinkView {
     }
 
     /**
-     * Saves this list on local memory
-     *
-     * @param list the list as provided by the internet
-     */
-    public void saveList(String[] list) {
-        // TODO Move this action to the model class
-        Context context = activity.getApplicationContext();
-        MemoryAccess card = new MemoryAccess(context);
-        card.createList(list);
-    }
-
-    /**
      * Returns to the main activity after storing the checklist on memory.
      */
     public void returnToMainActivity() {

@@ -9,6 +9,7 @@ import br.eng.crisjr.failproof.android.controller.LinkController;
 import br.eng.crisjr.failproof.android.model.LinkModel;
 import br.eng.crisjr.failproof.android.model.system.AccessResultant;
 import br.eng.crisjr.failproof.android.model.system.DatabaseAccess;
+import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 import br.eng.crisjr.failproof.android.view.LinkView;
 
 /**
@@ -27,7 +28,7 @@ public class LinkActivity extends Activity {
 
         // MVC
         String link = getIntent().getStringExtra("link");
-        model = new LinkModel(link);
+        model = new LinkModel(new MemoryAccess(getApplicationContext()), link);
         view = new LinkView(this);
         controller = new LinkController(model, view);
 

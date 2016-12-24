@@ -20,8 +20,6 @@ public class MainController {
         this(model, view);
     }
 
-    // TODO Actually update view
-
     /**
      * Draws the current state on screen.
      */

@@ -72,11 +72,28 @@ public class SearchView
      * @param link the link to the checklist.
      */
     public void list_onClick(String link) {
-        // TODO Start new activity for this link
         Intent intent = new Intent(activity, LinkActivity.class);
         intent.putExtra("link", link);
         activity.startActivityForResult(intent, LinkView.LINK_REQUEST);
     }
 
-
+    /**
+     * Method to receive the results of the child activities
+     *
+     * @param requestCode The code to the requested activity
+     * @param resultCode  The result of the operation
+     * @param intent      The intent sent to the activity
+     */
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        // TODO Better organize this code.
+        switch (resultCode) {
+            case LinkView.CANCEL_PLEASE:
+                Toast.makeText(activity.getApplicationContext(), "Canceled", Toast.LENGTH_SHORT).show();
+                break;
+            case LinkView.SAVE_PLEASE:
+                activity.setResult(MainView.SAVE_REQUEST);
+                activity.finish();
+                break;
+        }
+    }
 }

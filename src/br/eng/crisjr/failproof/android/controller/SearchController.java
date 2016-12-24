@@ -22,12 +22,20 @@ public class SearchController implements AccessResultant {
         this(model, view);
     }
 
+    /**
+     * Downloads the checklists' links to display on screen.
+     */
     public void downloadChecklists() {
         DatabaseAccess access = new DatabaseAccess(this);
         access.setOperation(DatabaseAccess.GET_STUFF);
         access.execute();
     }
 
+    /**
+     * Displays the available lists for download.
+     *
+     * @param result The call to get stuff from the database, as described on API.
+     */
     @Override
     public void receiveLists(String[] result) {
         model.addLists(result);
