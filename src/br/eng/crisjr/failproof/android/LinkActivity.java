@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import br.eng.crisjr.failproof.android.controller.LinkController;
+import br.eng.crisjr.failproof.android.model.LinkModel;
 import br.eng.crisjr.failproof.android.model.system.AccessResultant;
 import br.eng.crisjr.failproof.android.model.system.DatabaseAccess;
 import br.eng.crisjr.failproof.android.view.LinkView;
@@ -12,12 +14,10 @@ import br.eng.crisjr.failproof.android.view.LinkView;
 /**
  * Activity to display a list which can be saved to memory or not
  */
-public class LinkActivity
-       extends Activity
-       implements AccessResultant
-{
-    LinkView view = new LinkView();
-    String[] list = null;
+public class LinkActivity extends Activity {
+    LinkModel model = null;
+    LinkView view = null;
+    LinkController controller = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -25,26 +25,14 @@ public class LinkActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.link);
 
-        // download list
+        // MVC
         String link = getIntent().getStringExtra("link");
-        DatabaseAccess access = new DatabaseAccess(this);
-        access.setOperation(DatabaseAccess.GET_LIST);
-        access.execute(link);
-    }
+        model = new LinkModel(link);
+        view = new LinkView(this);
+        controller = new LinkController(model, view);
 
-    /**
-     * Implementation of the required method to download lists from internet.
-     * @param result the list title and items
-     */
-    public void receiveLists(String[] result)
-    {
-        int id = R.id.scrollInfo;
-        ScrollView scrollInfo = (ScrollView) findViewById(id);
-        LinearLayout linearInfo = (LinearLayout) findViewById(R.id.linearInfo);
-        scrollInfo = view.createScroll(getApplicationContext(), result);
-        scrollInfo.setId(id);
-        view.replaceScroll(linearInfo, scrollInfo);
-        list = result;
+        // Download list
+        controller.downloadChecklist();
     }
 
     /**
@@ -69,10 +57,7 @@ public class LinkActivity
      * @param v Ignoring this
      */
     public void onClick_buttonSave(View v) {
-        if (list == null) return;
-        view.saveList(getApplicationContext(), list);
-        setResult(LinkView.SAVE_PLEASE);
-        finish();
+        // TODO Save checklist
     }
 
 }

@@ -4,6 +4,9 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import br.eng.crisjr.failproof.android.LinkActivity;
+import br.eng.crisjr.failproof.android.R;
+import br.eng.crisjr.failproof.android.controller.LinkController;
 import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 
 /**
@@ -13,6 +16,27 @@ public class LinkView {
     public static final int LINK_REQUEST = 1;
     public static final int SAVE_PLEASE = 2;
     public static final int CANCEL_PLEASE = 3;
+
+    protected LinkActivity activity;
+    protected LinkController controller;
+
+    public LinkView(LinkActivity a) {
+        activity = a;
+    }
+
+    public LinkController setController(LinkController c) {
+        controller = c;
+        return controller;
+    }
+
+    public void updateStuff(String[] list) {
+        ScrollView scrollView = createScroll(activity.getApplicationContext(), list);
+        LinearLayout linearLayout = (LinearLayout) activity.findViewById(R.id.linearInfo);
+        scrollView.setId(R.id.scrollInfo);
+        replaceScroll(linearLayout, scrollView);
+    }
+
+    /* VIEW STUFF */
 
     /**
      * Creates a new scroll to add the possible list
@@ -62,18 +86,7 @@ public class LinkView {
      * @return the main layout with the appropriate replacements
      */
     public LinearLayout replaceScroll(LinearLayout linear, ScrollView scroll) {
-//        return new MainView().replaceScroll(linear, scroll);
-        return null;
-    }
-
-    /**
-     * Saves this list on local memory
-     *
-     * @param list the list as provided by the internet
-     */
-    public void saveList(Context context, String[] list) {
-        MemoryAccess card = new MemoryAccess(context);
-        card.createList(list);
+        return MainView.replaceScroll(linear, scroll);
     }
 
 }

@@ -68,7 +68,9 @@ public class SearchView
 
     public void list_onClick(String link) {
         // TODO Start new activity for this link
-        Toast.makeText(activity.getApplicationContext(), link, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, LinkActivity.class);
+        intent.putExtra("link", link);
+        activity.startActivity(intent);
     }
 
 

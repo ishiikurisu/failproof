@@ -90,7 +90,6 @@ public class MainView {
     /* OTHER ACTIVITIES */
 
     public void searchNewLists() {
-        String outlet = null;
         Intent intent = new Intent(activity, SearchActivity.class);
         activity.startActivity(intent);
     }
