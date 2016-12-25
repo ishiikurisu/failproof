@@ -1,5 +1,6 @@
 package br.eng.crisjr.failproof.android.model;
 
+import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 import br.eng.crisjr.failproof.web;
 
 /**
@@ -9,7 +10,17 @@ public class MainModel {
     protected boolean mode = false;
     protected String[] titles = null;
     protected String[] addresses = null;
+    protected MemoryAccess memoryAccess;
 
+    public MainModel(MemoryAccess ma) {
+        memoryAccess = ma;
+    }
+
+    /**
+     * The current MainActivity mode.
+     *
+     * @return true if the activity is on delete mode, false otherwise.
+     */
     public boolean getMode() {
         return mode;
     }
@@ -23,16 +34,30 @@ public class MainModel {
         return this.titles;
     }
 
+    /**
+     * Saves on RAM important stuff from HD.
+     */
+    public void retrieveStuff() {
+        setStuff(memoryAccess.loadLists());
+    }
+
+    /**
+     * Loads the pairs of titles and addresses from HD.
+     *
+     * @return An array containing pairs of title and addresses, as described on API.
+     */
+    public String[] loadStuff() {
+        return memoryAccess.loadStuff();
+    }
+
+    /**
+     * Sets the state based on inlet.
+     * @param stuff An array containing pairs of title and addresses, as described on API.
+     */
     public void setStuff(String[] stuff) {
-        this.titles = web.toLists(stuff);
-        this.addresses = web.toLinks(stuff);
-    }
-
-    public String getNthTitle(int n) {
-        return this.titles[n];
-    }
-
-    public String getNthAddress(int n) {
-        return this.addresses[n];
+        if (stuff != null) {
+            this.titles = web.toLists(stuff);
+            this.addresses = web.toLinks(stuff);
+        }
     }
 }

@@ -19,7 +19,7 @@ public class MemoryAccess
     /**
      * Loads all lists saved on memory
      *
-     * @return the lists in virtual memory format
+     * @return the lists in virtual memory format, or null if there are no lists on memory.
      */
     public String[] loadLists()
     {
@@ -49,10 +49,9 @@ public class MemoryAccess
     /**
      * Loads basic information from memory
      *
-     * @param context The application's context
      * @return An array containing pairs "Address\nTitle"
      */
-    public String[] loadStuff(Context context)
+    public String[] loadStuff()
     {
         Checklist[] lists = Memory.retrieveAllLists(context);
         String[] codes = Memory.retrieveAllCodes(context);

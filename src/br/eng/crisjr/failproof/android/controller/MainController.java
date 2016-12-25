@@ -1,5 +1,6 @@
 package br.eng.crisjr.failproof.android.controller;
 
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.model.MainModel;
 import br.eng.crisjr.failproof.android.view.MainView;
 
@@ -24,12 +25,13 @@ public class MainController {
      * Draws the current state on screen.
      */
     public void updateView() {
+        model.retrieveStuff();
         String[] titles = model.getTitles();
 
         if (titles == null) {
             view.drawEmptyView();
         } else {
-            // TODO Draw lists on screen
+            view.drawFilledView(model.loadStuff());
         }
     }
 
@@ -44,7 +46,6 @@ public class MainController {
      * Called when search activity is finished.
      */
     public void receiveChecklist() {
-        // TODO Actually receive checklists
         updateView();
     }
 }

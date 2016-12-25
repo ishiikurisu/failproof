@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 import br.eng.crisjr.failproof.android.view.MainView;
 import br.eng.crisjr.failproof.android.model.MainModel;
 import br.eng.crisjr.failproof.android.controller.MainController;
@@ -24,10 +25,13 @@ public class MainActivity
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        MemoryAccess memoryAccess = new MemoryAccess(getApplicationContext());
+        memoryAccess.resetMemory();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         view = new MainView(this);
-        model = new MainModel();
+        model = new MainModel(memoryAccess);
         controller = new MainController(view, model);
 
         controller.updateView();
@@ -55,7 +59,6 @@ public class MainActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // TODO Actually receive checklist
-        controller.receiveChecklist();
+        controller.updateView();
     }
 }

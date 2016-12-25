@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.MainActivity;
 import br.eng.crisjr.failproof.android.R;
 import br.eng.crisjr.failproof.android.SearchActivity;
@@ -39,6 +40,18 @@ public class MainView {
         ScrollView scroll = resetScroll();
         scroll.setId(R.id.scrollLists);
         replaceScroll(layoutMain, scroll);
+    }
+
+    /**
+     * Creates a view with the given titles on screen.
+     *
+     * @param titles The titles of each checklist.
+     */
+    public void drawFilledView(String[] titles) {
+        LinearLayout layoutMain = (LinearLayout) activity.findViewById(R.id.layoutMain);
+        ScrollView scrollLists = createScroll(titles);
+        scrollLists.setId(R.id.scrollLists);
+        replaceScroll(layoutMain, scrollLists);
     }
 
     /* BUILDING VIEWS */
@@ -92,6 +105,39 @@ public class MainView {
         return linear;
     }
 
+    /**
+     * Creates a scroll with many lists
+     *
+     * @param stuff The lists available
+     * @return The scroll populated with the lists
+     */
+    public ScrollView createScroll(String[] stuff) {
+        Context context = activity.getApplicationContext();
+        ScrollView scroll = new ScrollView(context);
+        LinearLayout box = new LinearLayout(context);
+        int limit = stuff.length;
+
+        box.setOrientation(LinearLayout.VERTICAL);
+        for (int i = 0; i < limit; ++i) {
+            TextView tv = new TextView(context);
+            String[] fields = stuff[i].split("\n"); // TODO Discover if this can be replaced by API tools
+            String address = fields[0];
+            String title = fields[1];
+            tv.setText(title);
+            tv.setTextSize(20);
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickNthTitle(address);
+                }
+            });
+            box.addView(tv);
+        }
+
+        scroll.addView(box);
+        return scroll;
+    }
+
     /* OTHER ACTIVITIES */
 
     /**
@@ -100,5 +146,10 @@ public class MainView {
     public void searchNewLists() {
         Intent intent = new Intent(activity, SearchActivity.class);
         activity.startActivityForResult(intent, SAVE_REQUEST);
+    }
+
+    public void onClickNthTitle(String address) {
+        // TODO Start new activity depending on the given address
+        Toast.makeText(activity, address, Toast.LENGTH_SHORT).show();
     }
 }
