@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.View;
 import android.widget.*;
 import br.eng.crisjr.failproof.android.ListActivity;
+import br.eng.crisjr.failproof.android.R;
+import br.eng.crisjr.failproof.android.controller.ChecklistController;
 import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 import br.eng.crisjr.failproof.android.model.entity.Checklist;
 
@@ -11,6 +13,41 @@ import br.eng.crisjr.failproof.android.model.entity.Checklist;
  * View class for ListActivity
  */
 public class ChecklistView {
+    protected ListActivity activity;
+    protected ChecklistController controller;
+
+    public ChecklistView(ListActivity activity) {
+        this.activity = activity;
+    }
+
+    /**
+     * Determines once the controller for this view.
+     *
+     * @param controller The candidate for controller.
+     * @return The set controller.
+     */
+    public ChecklistController setController(ChecklistController controller) {
+        if (this.controller == null) {
+            this.controller = controller;
+        }
+        return this.controller;
+    }
+
+    /**
+     * Draws the given checklist on screen.
+     *
+     * @param rawChecklist The string on android format.
+     */
+    public void setChecklist(String rawChecklist) {
+        Checklist checklist = new Checklist(rawChecklist);
+        TextView title = (TextView) activity.findViewById(R.id.textChecklistTitle);
+        title.setText(checklist.getTitle());
+        LinearLayout layout = drawChecklist(checklist);
+        layout.setId(R.id.layoutChecklist);
+        ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
+        scroll = replaceScroll(scroll, layout);
+    }
+
     /**
      * Loads the chosen checklist from memory
      *
@@ -25,16 +62,16 @@ public class ChecklistView {
     /**
      * Creates a visual representation for the checklist
      *
-     * @param context   The application's context
-     * @param activity  The checklist activity
      * @param checklist The checklist to be added
      * @return The layout containing the checklist stuff
      */
-    public LinearLayout drawChecklist(Context context, ListActivity activity, Checklist checklist) {
+    public LinearLayout drawChecklist(Checklist checklist) {
+        Context context = activity.getApplicationContext();
         LinearLayout layout = new LinearLayout(context);
         String[] items = checklist.getItems();
         boolean[] checked = checklist.getChecked();
         int limit = items.length;
+        int i;
 
         // Setting up parent view
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -42,8 +79,7 @@ public class ChecklistView {
                 LinearLayout.LayoutParams.WRAP_CONTENT));
 
         // Setting up each line
-        for (int i = 0; i < limit; ++i) {
-            // TODO make each line good looking
+        for (i = 0; i < limit; ++i) {
             RadioButton button = new RadioButton(context);
             button.setChecked(checked[i]);
             button.setOnClickListener(new View.OnClickListener() {
@@ -76,15 +112,11 @@ public class ChecklistView {
         return scroll;
     }
 
-    /**
-     * Extracts checklist coded in view objects
-     *
-     * @param scroll The scroll containing the checklist
-     * @return the string in virtual checklist format
-     */
-    public String extractChecklist(ScrollView scroll) {
+    public String retrieveChecklist() {
+        TextView title = (TextView) activity.findViewById(R.id.textChecklistTitle);
+        String outlet = title.getText() + "\n";
+        ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
         LinearLayout layout = (LinearLayout) scroll.getChildAt(0);
-        String outlet = "";
 
         for (int i = 0; i < layout.getChildCount(); ++i) {
             LinearLayout line = (LinearLayout) layout.getChildAt(i);
@@ -97,15 +129,5 @@ public class ChecklistView {
         }
 
         return outlet;
-    }
-
-    /**
-     * Saves the given checklist on that memory address
-     *
-     * @param address   The memory address
-     * @param checklist the checklist to be saved
-     */
-    public void saveChecklistOnMemory(Context context, String address, String checklist) {
-        new MemoryAccess(context).store(address, checklist);
     }
 }
