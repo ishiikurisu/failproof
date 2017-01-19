@@ -84,6 +84,7 @@ public class ChecklistView {
             button.setChecked(checked[i]);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
+                // TODO Call method from view, not from activity
                 public void onClick(View v) {
                     activity.radio_onClick(v);
                 }
