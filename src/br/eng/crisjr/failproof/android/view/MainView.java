@@ -9,9 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-import br.eng.crisjr.failproof.android.MainActivity;
-import br.eng.crisjr.failproof.android.R;
-import br.eng.crisjr.failproof.android.SearchActivity;
+import br.eng.crisjr.failproof.android.*;
 import br.eng.crisjr.failproof.android.controller.MainController;
 
 /**
@@ -22,6 +20,7 @@ public class MainView {
     protected MainController controller = null;
     public static int SAVE_REQUEST = 1;
     public static int CANCEL_REQUEST = 2;
+    public static int EDIT_REQUEST = 4;
 
     public MainView(MainActivity activity) {
         this.activity = activity;
@@ -150,6 +149,8 @@ public class MainView {
 
     public void onClickNthTitle(String address) {
         // TODO Start new activity depending on the given address
-        Toast.makeText(activity, address, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, ListActivity.class);
+        intent.putExtra("address", address);
+        activity.startActivityForResult(intent, EDIT_REQUEST);
     }
 }

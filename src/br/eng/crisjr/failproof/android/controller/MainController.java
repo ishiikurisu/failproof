@@ -48,4 +48,21 @@ public class MainController {
     public void receiveChecklist() {
         updateView();
     }
+
+    /**
+     * Loads a checklist from memory using its address code.
+     *
+     * @param address The memory code to retrieve a checklist.
+     * @return The expected checklist or null if the address is invalid.
+     */
+    public String retrieveChecklist(String address) {
+        String rawChecklist = null;
+        String obtainedChecklist = model.loadList(address);
+
+        if (obtainedChecklist != null) {
+            rawChecklist = obtainedChecklist;
+        }
+
+        return rawChecklist;
+    }
 }

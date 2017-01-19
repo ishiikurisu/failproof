@@ -30,6 +30,8 @@ public class ListActivity extends Activity {
         replaceScroll(checklist);
     }
 
+    // TODO REFACTOR THIS CODE URGENTLY
+
     private void replaceScroll(Checklist checklist) {
         LinearLayout layout = view.drawChecklist(getApplicationContext(), this, checklist);
         layout.setId(R.id.layoutChecklist);

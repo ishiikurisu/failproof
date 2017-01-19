@@ -60,4 +60,14 @@ public class MainModel {
             this.addresses = web.toLinks(stuff);
         }
     }
+
+    /**
+     * Loads a checklist from memory depending on its address.
+     *
+     * @param address The code to retrieve a list.
+     * @return The checklist on API format.
+     */
+    public String loadList(String address) {
+        return memoryAccess.loadList(address).toString();
+    }
 }
