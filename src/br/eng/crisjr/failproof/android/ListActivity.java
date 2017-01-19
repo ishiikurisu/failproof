@@ -1,43 +1,43 @@
 package br.eng.crisjr.failproof.android;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import br.eng.crisjr.failproof.android.controller.ChecklistController;
+import br.eng.crisjr.failproof.android.model.ChecklistModel;
 import br.eng.crisjr.failproof.android.model.entity.Checklist;
+import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 import br.eng.crisjr.failproof.android.view.ChecklistView;
 
 /**
  * Activity to display a usable checklist
  */
 public class ListActivity extends Activity {
-    private ChecklistView view = new ChecklistView();
+    protected ChecklistModel model;
+    protected ChecklistView view;
+    protected ChecklistController controller;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklist);
 
-        // Setting up list
+        // Setting up MVC
         String address = getIntent().getStringExtra("address");
-        TextView title = (TextView) findViewById(R.id.textChecklistTitle);
-        Checklist checklist = view.loadList(getApplicationContext(), address);
-        title.setText(checklist.getTitle());
+        Context context = getApplicationContext();
+        model = new ChecklistModel(new MemoryAccess(context), address);
+        view = new ChecklistView(this);
+        controller = new ChecklistController(model, view);
 
-        // Drawing checklist
-        replaceScroll(checklist);
+        // Setting up list
+        controller.setup();
     }
 
     // TODO REFACTOR THIS CODE URGENTLY
-
-    private void replaceScroll(Checklist checklist) {
-        LinearLayout layout = view.drawChecklist(getApplicationContext(), this, checklist);
-        layout.setId(R.id.layoutChecklist);
-        ScrollView scroll = (ScrollView) findViewById(R.id.scrollChecklist);
-        scroll = view.replaceScroll(scroll, layout);
-    }
 
     public void radio_onClick(View v) {
         TextView title = (TextView) findViewById(R.id.textChecklistTitle);
