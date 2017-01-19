@@ -4,12 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import br.eng.crisjr.failproof.android.controller.ChecklistController;
 import br.eng.crisjr.failproof.android.model.ChecklistModel;
-import br.eng.crisjr.failproof.android.model.entity.Checklist;
 import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
 import br.eng.crisjr.failproof.android.view.ChecklistView;
 

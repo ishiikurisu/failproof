@@ -113,6 +113,11 @@ public class ChecklistView {
         return scroll;
     }
 
+    /**
+     * Retrieves the checklist that is represented on the current screen.
+     *
+     * @return The checklist on API format.
+     */
     public String retrieveChecklist() {
         TextView title = (TextView) activity.findViewById(R.id.textChecklistTitle);
         String outlet = title.getText() + "\n";
