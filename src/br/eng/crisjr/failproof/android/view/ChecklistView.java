@@ -2,6 +2,7 @@ package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import br.eng.crisjr.failproof.android.ListActivity;
 import br.eng.crisjr.failproof.android.R;
@@ -42,6 +43,9 @@ public class ChecklistView {
         Checklist checklist = new Checklist(rawChecklist);
         TextView title = (TextView) activity.findViewById(R.id.textChecklistTitle);
         title.setText(checklist.getTitle());
+        title.setTextSize(30);
+        title.setTextColor(activity.getApplicationContext().getResources().getColor(R.color.white));
+        // TODO Make title appear on the center
         LinearLayout layout = drawChecklist(checklist);
         layout.setId(R.id.layoutChecklist);
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
@@ -79,6 +83,8 @@ public class ChecklistView {
                 LinearLayout.LayoutParams.WRAP_CONTENT));
 
         // Setting up each line
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(10, 10, 10, 10);
         for (i = 0; i < limit; ++i) {
             RadioButton button = new RadioButton(context);
             button.setChecked(checked[i]);
@@ -89,9 +95,14 @@ public class ChecklistView {
                     activity.radio_onClick(v);
                 }
             });
+            button.setTextSize(20);
+            button.setTextColor(context.getResources().getColor(R.color.white));
             TextView text = new TextView(context);
             text.setText(items[i]);
+            text.setTextSize(20);
+            text.setTextColor(context.getResources().getColor(R.color.white));
             LinearLayout line = new LinearLayout(context);
+            line.setLayoutParams(lp);
             line.addView(button);
             line.addView(text);
             layout.addView(line);

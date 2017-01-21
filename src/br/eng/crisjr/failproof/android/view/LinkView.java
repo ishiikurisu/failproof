@@ -1,6 +1,8 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -62,18 +64,22 @@ public class LinkView {
         // Adding title
         TextView title = new TextView(context);
         title.setText(list[0]);
-        title.setTextSize(40);
+        title.setTextSize(30);
+        title.setTextColor(context.getResources().getColor(R.color.white));
+        // TODO Make title appear on center
         title.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         stuff.addView(title);
 
         // Adding items
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(10, 10, 10, 10);
         for (int i = 1; i < list.length; ++i) {
             TextView tv = new TextView(context);
             tv.setText(list[i]);
-            title.setTextSize(30);
-            title.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            tv.setTextSize(20);
+            tv.setTextColor(context.getResources().getColor(R.color.white));
+            tv.setLayoutParams(lp);
             stuff.addView(tv);
         }
 

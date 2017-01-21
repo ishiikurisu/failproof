@@ -118,6 +118,8 @@ public class MainView {
         int limit = stuff.length;
 
         box.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(10, 10, 10, 10);
         for (int i = 0; i < limit; ++i) {
             // TODO Make this button prettier
             TextView tv = new TextView(context);
@@ -127,6 +129,7 @@ public class MainView {
             tv.setText(title);
             tv.setTextSize(20);
             tv.setTextColor(context.getResources().getColor(R.color.white));
+            tv.setLayoutParams(lp);
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:background="@color/brown"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:id="@+id/linearInfo">
-    <ScrollView android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/scrollInfo"
-                android:layout_gravity="center">
-        <LinearLayout android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:gravity="center"
-                      android:orientation="vertical">
-            <TextView android:text="Now Loading..."
-                      android:id="@+id/textPlaceholder"
-                      android:textSize="30sp"
-                      android:layout_gravity="center"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-    </ScrollView>
-    <GridLayout android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="horizontal">
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="match_parent"
+                  android:orientation="horizontal">
         <Button android:id="@+id/buttonSave"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_column="0"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@color/red"
+                android:layout_margin="10sp"
                 android:onClick="onClick_buttonSave"
                 android:text="Save"/>
         <Button android:id="@+id/buttonCancel"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_column="1"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@color/red"
+                android:layout_margin="10sp"
                 android:onClick="onClick_buttonCancel"
                 android:text="Cancel"/>
-    </GridLayout>
+    </LinearLayout>
+    <ScrollView android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/scrollInfo"
+                android:layout_gravity="center">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+
+            <TextView android:text="Now Loading..."
+                      android:id="@+id/textPlaceholder"
+                      android:textSize="30sp"
+                      android:textColor="@color/white"
+                      android:layout_gravity="center"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
