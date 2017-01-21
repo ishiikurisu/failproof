@@ -3,6 +3,7 @@ package br.eng.crisjr.failproof.android.view;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -52,6 +53,10 @@ public class SearchView
             TextView tv = new TextView(context);
             tv.setText(list);
             tv.setTextSize(20);
+            tv.setTextColor(context.getResources().getColor(R.color.white));
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(10, 10, 10, 10);
+            tv.setLayoutParams(lp);
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
