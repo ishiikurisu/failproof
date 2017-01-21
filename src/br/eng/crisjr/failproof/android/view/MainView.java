@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 import br.eng.crisjr.failproof.android.*;
 import br.eng.crisjr.failproof.android.controller.MainController;
 
@@ -65,11 +64,13 @@ public class MainView {
         ScrollView scroll = new ScrollView(context);
         TextView tv = new TextView(context);
 
+        // TODO Make this text prettier
         tv.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
-        tv.setTextSize(25);
+        tv.setTextSize(20);
         tv.setGravity(Gravity.CENTER_HORIZONTAL);
         tv.setText(context.getResources().getString(R.string.empty_lists));
+        tv.setTextColor(context.getResources().getColor(R.color.white));
         ScrollView.LayoutParams lp = new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.setMargins(10, 10, 10, 10);
@@ -118,12 +119,14 @@ public class MainView {
 
         box.setOrientation(LinearLayout.VERTICAL);
         for (int i = 0; i < limit; ++i) {
+            // TODO Make this button prettier
             TextView tv = new TextView(context);
             String[] fields = stuff[i].split("\n"); // TODO Discover if this can be replaced by API tools
             String address = fields[0];
             String title = fields[1];
             tv.setText(title);
             tv.setTextSize(20);
+            tv.setTextColor(context.getResources().getColor(R.color.white));
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
