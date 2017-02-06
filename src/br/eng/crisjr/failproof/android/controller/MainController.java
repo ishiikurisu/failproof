@@ -67,6 +67,16 @@ public class MainController {
     }
 
     /**
+     * Deletes a checklist from memory and updates the view
+     *
+     * @param address The checklist address on memory
+     */
+    public void deleteChecklist(String address) {
+        model.removeList(address);
+        updateView();
+    }
+
+    /**
      * Switches the delete mode on or off.
      */
     public void toggleMode() {

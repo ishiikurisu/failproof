@@ -70,4 +70,14 @@ public class MainModel {
     public String loadList(String address) {
         return memoryAccess.loadList(address).toString();
     }
+
+    /**
+     * Deletes a checklist from memory
+     *
+     * @param address The checklist address on memory
+     */
+    public void removeList(String address) {
+        // TODO Remove checklist from memory
+        memoryAccess.remove(address);
+    }
 }

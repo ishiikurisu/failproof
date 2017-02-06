@@ -188,5 +188,6 @@ public class MainView {
     public void onDeleteNthTitle(String address) {
         Toast.makeText(activity.getApplicationContext(), address, Toast.LENGTH_SHORT).show();
         // TODO Delete list from memory
+        controller.deleteChecklist(address);
     }
 }

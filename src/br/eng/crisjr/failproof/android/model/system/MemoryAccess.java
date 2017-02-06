@@ -84,8 +84,23 @@ public class MemoryAccess
         Memory.resetMemory(context);
     }
 
+    /**
+     * Stores raw data on a given memory address
+     *
+     * @param address where to store
+     * @param raw     what to store
+     */
     public void store(String address, String raw) {
         Checklist checklist = new Checklist(raw);
         Memory.store(context, address, checklist);
+    }
+
+    /**
+     * Deletes data from memory
+     *
+     * @param address Memory reference
+     */
+    public void remove(String address) {
+        Memory.remove(context, address);
     }
 }

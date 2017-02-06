@@ -37,19 +37,41 @@ public class Memory
     }
 
     /**
+     * Gets the next free address
+     * @param context The application's context
+     * @return The next free address
+     */
+    public static String next(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String outlet = "";
+        int index = 0;
+
+        while ((outlet.length() == 0) && (index < 1000)) {
+            String candidate = String.format("%03d", index);
+            String data = preferences.getString(candidate, "");
+
+            if (data.length() == 0) {
+                outlet = candidate;
+            }
+
+            index++;
+        }
+
+        if (index == 1000) {
+            throw new IllegalStateException("No more memory!");
+        }
+
+        return outlet;
+    }
+
+    /**
      * Stores a checklist on memory under its position on memory
      * @param context The application's context
      * @param checklist The checklist object to be saved
      */
     public static void store(Context context, Checklist checklist)
     {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = preferences.edit();
-        int size = preferences.getInt("size", 0);
-        editor.putString(String.format("%03d", size), checklist.toString());
-        editor.putInt("size", size + 1);
-        editor.commit();
-        editor.apply();
+        store(context, Memory.next(context), checklist);
     }
 
     /**
@@ -61,7 +83,7 @@ public class Memory
     public static void store(Context context, String address, Checklist checklist) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(String.format(address), checklist.toString());
+        editor.putString(address, checklist.toString());
         editor.commit();
         editor.apply();
     }
@@ -88,16 +110,16 @@ public class Memory
         List<String> stuff = new ArrayList<>();
         String[] outlet = null;
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        int size = preferences.getInt("size", 0);
 
-        if (size > 0) {
-            for (int i = 0; i < size; ++i) {
-                String code = String.format("%03d", i);
-                String raw = preferences.getString(code, "");
-                if (raw.length() > 0) {
-                    stuff.add(code);
-                }
+        for (int i = 0; i < 1000; ++i) {
+            String code = String.format("%03d", i);
+            String raw = preferences.getString(code, "");
+            if (raw.length() > 0) {
+                stuff.add(code);
             }
+        }
+
+        if (stuff.size() > 0) {
             outlet = stuff.toArray(new String[stuff.size()]);
         }
 
@@ -121,5 +143,19 @@ public class Memory
         }
 
         return outlet;
+    }
+
+    /**
+     * Removes data from memory
+     *
+     * @param context The application's context
+     * @param code    The list address
+     */
+    public static void remove(Context context, String code) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove(code);
+        editor.commit();
+        editor.apply();
     }
 }
