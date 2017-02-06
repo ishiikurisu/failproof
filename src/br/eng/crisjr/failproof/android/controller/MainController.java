@@ -43,13 +43,6 @@ public class MainController {
     }
 
     /**
-     * Called when search activity is finished.
-     */
-    public void receiveChecklist() {
-        updateView();
-    }
-
-    /**
      * Loads a checklist from memory using its address code.
      *
      * @param address The memory code to retrieve a checklist.

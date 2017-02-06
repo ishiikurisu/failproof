@@ -36,6 +36,7 @@ public class MainActivity
         controller.updateView();
     }
 
+    // TODO Add possibility of creating checklists
     /**
      * Callback to + button. Will call another activity to show lists available on the internet.
      * @param view I don't know why this argument is here
@@ -44,7 +45,6 @@ public class MainActivity
         controller.searchChecklists();
     }
 
-    // TODO Add possibility to delete checklists
     /**
      * Callback to x button. Toggles the delete mode.
      * @param view I don't know why this argument is here either

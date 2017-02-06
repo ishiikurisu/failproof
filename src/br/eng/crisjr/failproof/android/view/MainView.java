@@ -179,15 +179,23 @@ public class MainView {
         activity.startActivityForResult(intent, SAVE_REQUEST);
     }
 
+    /**
+     * Called when a checklist title is pressed and the view is not on delete mode
+     *
+     * @param address The checklist address
+     */
     public void onClickNthTitle(String address) {
         Intent intent = new Intent(activity, ListActivity.class);
         intent.putExtra("address", address);
         activity.startActivityForResult(intent, EDIT_REQUEST);
     }
 
+    /**
+     * Called when a checklist title is pressed and the view is on delete mode
+     * @param address The checklist address
+     */
     public void onDeleteNthTitle(String address) {
-        Toast.makeText(activity.getApplicationContext(), address, Toast.LENGTH_SHORT).show();
-        // TODO Delete list from memory
+        // TODO Add confirmation dialog
         controller.deleteChecklist(address);
     }
 }

@@ -77,7 +77,6 @@ public class MainModel {
      * @param address The checklist address on memory
      */
     public void removeList(String address) {
-        // TODO Remove checklist from memory
         memoryAccess.remove(address);
     }
 }
