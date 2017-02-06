@@ -36,7 +36,7 @@ public class MainController {
     }
 
     /**
-     * Calls the search checklist activity to enable the user to pick a checklist.s
+     * Calls the search checklist activity to enable the user to pick a checklist.
      */
     public void searchChecklists() {
         view.searchNewLists();
@@ -64,5 +64,13 @@ public class MainController {
         }
 
         return rawChecklist;
+    }
+
+    /**
+     * Switches the delete mode on or off.
+     */
+    public void toggleMode() {
+        view.switchMode();
+        updateView();
     }
 }

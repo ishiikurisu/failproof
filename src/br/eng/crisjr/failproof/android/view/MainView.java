@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import br.eng.crisjr.failproof.android.*;
 import br.eng.crisjr.failproof.android.controller.MainController;
 
@@ -20,6 +21,7 @@ public class MainView {
     public static int SAVE_REQUEST = 1;
     public static int CANCEL_REQUEST = 2;
     public static int EDIT_REQUEST = 4;
+    protected boolean deleteMode = false;
 
     public MainView(MainActivity activity) {
         this.activity = activity;
@@ -28,6 +30,15 @@ public class MainView {
     public MainController setController(MainController controller) {
         this.controller = controller;
         return this.controller;
+    }
+
+    public boolean getDeleteMode() {
+        return deleteMode;
+    }
+
+    public void switchMode() {
+        deleteMode = !deleteMode;
+        // TODO Change X button background color
     }
 
     /**
@@ -122,25 +133,40 @@ public class MainView {
         lp.setMargins(10, 10, 10, 10);
         for (int i = 0; i < limit; ++i) {
             // TODO Make this button prettier
-            TextView tv = new TextView(context);
-            String[] fields = stuff[i].split("\n"); // TODO Discover if this can be replaced by API tools
-            String address = fields[0];
-            String title = fields[1];
-            tv.setText(title);
-            tv.setTextSize(20);
-            tv.setTextColor(context.getResources().getColor(R.color.white));
+            TextView tv = createButton(context, stuff[i], deleteMode);
             tv.setLayoutParams(lp);
-            tv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onClickNthTitle(address);
-                }
-            });
             box.addView(tv);
         }
 
         scroll.addView(box);
         return scroll;
+    }
+
+    protected TextView createButton(Context context, String info, boolean deleteMode) {
+        TextView tv = new TextView(context);
+        String[] fields = info.split("\n"); // TODO Discover if this can be replaced by API tools
+        String address = fields[0];
+        String title = fields[1];
+
+        if (deleteMode) {
+            title = "Delete \"" + title + "\"?";
+        }
+
+        tv.setText(title);
+        tv.setTextSize(20);
+        tv.setTextColor(context.getResources().getColor(R.color.white));
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (deleteMode) {
+                    onDeleteNthTitle(address);
+                } else {
+                    onClickNthTitle(address);
+                }
+            }
+        });
+
+        return tv;
     }
 
     /* OTHER ACTIVITIES */
@@ -154,9 +180,13 @@ public class MainView {
     }
 
     public void onClickNthTitle(String address) {
-        // TODO Start new activity depending on the given address
         Intent intent = new Intent(activity, ListActivity.class);
         intent.putExtra("address", address);
         activity.startActivityForResult(intent, EDIT_REQUEST);
+    }
+
+    public void onDeleteNthTitle(String address) {
+        Toast.makeText(activity.getApplicationContext(), address, Toast.LENGTH_SHORT).show();
+        // TODO Delete list from memory
     }
 }

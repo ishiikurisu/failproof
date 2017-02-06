@@ -50,6 +50,7 @@ public class MainActivity
      * @param view I don't know why this argument is here either
      */
     public void onClick_buttonRandom(View view) {
+        controller.toggleMode();
     }
 
     /**
