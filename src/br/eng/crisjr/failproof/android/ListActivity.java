@@ -34,8 +34,29 @@ public class ListActivity extends Activity {
         controller.setup();
     }
 
+    /**
+     * Called when a radio button is pressed
+     *
+     * @param v the pressed radio button
+     */
     public void radio_onClick(View v) {
         String checklist = view.retrieveChecklist();
         controller.saveChecklist(address, checklist);
+    }
+
+    /**
+     * Called when the back button is pressed
+     */
+    public void onClick_buttonBack(View v) {
+        onBackPressed();
+    }
+
+    /**
+     * Called when the edit/save button is pressed
+     *
+     * @param v
+     */
+    public void onClick_buttonEdit(View v) {
+        // TODO Implement edition of list
     }
 }

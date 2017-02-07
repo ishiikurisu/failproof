@@ -20,5 +20,27 @@
         </LinearLayout>
 
     </ScrollView>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/layoutChecklistOptions">
+        <Button android:layout_gravity="center_horizontal"
+                android:id="@+id/buttonBack"
+                android:onClick="onClick_buttonBack"
+                android:background="@color/red"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5sp"
+                android:text="Back"/>
+        <Button android:layout_gravity="center_horizontal"
+                android:id="@+id/buttonEdit"
+                android:background="@color/red"
+                android:onClick="onClick_buttonEdit"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_margin="5sp"
+                android:layout_weight="1"
+                android:text="Edit"/>
+    </LinearLayout>
 
 </LinearLayout>
