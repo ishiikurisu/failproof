@@ -31,11 +31,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Trying to deal with big checklists">
+    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Working on the edit button logic">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
     </list>
     <ignored path="Failproof.iws" />
@@ -88,13 +87,15 @@
       <file leaf-file-name="ChecklistView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.942959">
-              <caret line="248" column="54" selection-start-line="248" selection-start-column="54" selection-end-line="248" selection-end-column="54" />
+            <state vertical-scroll-proportion="-0.25490198">
+              <caret line="224" column="65" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
               <folding>
                 <element signature="e#1277#1278#0" expanded="true" />
                 <element signature="e#1313#1314#0" expanded="true" />
                 <element signature="e#1400#1401#0" expanded="true" />
                 <element signature="e#1431#1432#0" expanded="true" />
+                <element signature="e#7483#7484#0" expanded="true" />
+                <element signature="e#7530#7531#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -678,12 +679,6 @@
       <option name="number" value="Default" />
       <updated>1468601212421</updated>
     </task>
-    <task id="LOCAL-00008" summary="Downloading data from database to link activity">
-      <created>1469581761844</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1469581761844</updated>
-    </task>
     <task id="LOCAL-00009" summary="Update manifest file and tried to access bluetooth">
       <created>1469708366149</created>
       <option name="number" value="00009" />
@@ -972,7 +967,13 @@
       <option name="project" value="LOCAL" />
       <updated>1486514191100</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Working on the edit button logic">
+      <created>1486515120863</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1486515120864</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1028,7 +1029,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dealing with that EditText is going to be hard" />
     <MESSAGE value="Preparing ground to enable destruction" />
     <MESSAGE value="Refactoring..." />
     <MESSAGE value="Restarting project,,," />
@@ -1053,7 +1053,8 @@
     <MESSAGE value="Preparing ground for implementing edition of lists" />
     <MESSAGE value="Changing checklist title" />
     <MESSAGE value="Trying to deal with big checklists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to deal with big checklists" />
+    <MESSAGE value="Working on the edit button logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on the edit button logic" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1491,13 +1492,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.942959">
-          <caret line="248" column="54" selection-start-line="248" selection-start-column="54" selection-end-line="248" selection-end-column="54" />
+        <state vertical-scroll-proportion="-0.25490198">
+          <caret line="224" column="65" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
           <folding>
             <element signature="e#1277#1278#0" expanded="true" />
             <element signature="e#1313#1314#0" expanded="true" />
             <element signature="e#1400#1401#0" expanded="true" />
             <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#7483#7484#0" expanded="true" />
+            <element signature="e#7530#7531#0" expanded="true" />
           </folding>
         </state>
       </provider>

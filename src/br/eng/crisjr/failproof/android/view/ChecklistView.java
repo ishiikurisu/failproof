@@ -196,24 +196,7 @@ public class ChecklistView {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.setMargins(10, 10, 10, 10);
         for (i = 0; i < limit; ++i) {
-            TextView cross = new TextView(context);
-            cross.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // TODO Delete current item from checklist
-                }
-            });
-            cross.setText("X ");
-            cross.setTextSize(20);
-            cross.setTextColor(context.getResources().getColor(R.color.white));
-            EditText text = new EditText(context);
-            text.setText(items[i]);
-            text.setTextSize(20);
-            text.setTextColor(context.getResources().getColor(R.color.white));
-            LinearLayout line = new LinearLayout(context);
-            line.setLayoutParams(lp);
-            line.addView(cross);
-            line.addView(text);
+            LinearLayout line = createLine(context, items[i], lp, i);
             layout.addView(line);
         }
 
@@ -225,12 +208,55 @@ public class ChecklistView {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Delete current item from checklist
+                addItemToList();
             }
         });
         layout.addView(buttonAdd);
 
         return layout;
+    }
+
+    /**
+     * Creates a line for editing items
+     *
+     * @param context The app's context
+     * @param item    The item name
+     * @param lp      The item layout organization
+     * @param index   The index this item should go
+     * @return A line containing an X button and the item's title
+     */
+    public LinearLayout createLine(Context context, String item, LinearLayout.LayoutParams lp, int index) {
+        TextView cross = new TextView(context);
+        cross.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Delete current item from checklist
+            }
+        });
+        cross.setText("X ");
+        cross.setTextSize(20);
+        cross.setTextColor(context.getResources().getColor(R.color.white));
+        EditText text = new EditText(context);
+        text.setText(item);
+        text.setTextSize(20);
+        text.setTextColor(context.getResources().getColor(R.color.white));
+        LinearLayout line = new LinearLayout(context);
+        line.setLayoutParams(lp);
+        line.addView(cross);
+        line.addView(text);
+        return line;
+    }
+
+    /**
+     * Adds an item to an editable checklist
+     */
+    public void addItemToList() {
+        LinearLayout stuff = (LinearLayout) activity.findViewById(R.id.layoutChecklist);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        Context context = activity.getApplicationContext();
+        int limit = stuff.getChildCount() - 1;
+        LinearLayout line = createLine(context, "New item", lp, limit);
+        stuff.addView(line, limit);
     }
 
     /**
