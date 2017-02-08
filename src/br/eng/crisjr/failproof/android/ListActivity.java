@@ -55,7 +55,7 @@ public class ListActivity extends Activity {
      * Called when the edit/save button is pressed
      */
     public void onClick_buttonEdit(View v) {
-        // TODO Implement edition of list
+        // TODO Discover why it can't return to the regular mode
         String checklist = view.retrieveChecklist();
         controller.saveChecklist(address, checklist);
         view.toggleMode();

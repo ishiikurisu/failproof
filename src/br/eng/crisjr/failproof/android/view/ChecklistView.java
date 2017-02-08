@@ -68,7 +68,7 @@ public class ChecklistView {
 
         // Adding items
         // TODO Enable checklist items' edition
-        LinearLayout stuff = drawChecklist(checklist);
+        LinearLayout stuff = (editMode) ? editChecklist(checklist) : drawChecklist(checklist);
         stuff.setId(R.id.layoutChecklist);
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
         scroll = replaceScroll(scroll, stuff);
@@ -175,6 +175,64 @@ public class ChecklistView {
     }
 
     /**
+     * Creates a layout that enables the edition of checklist items
+     *
+     * @param checklist The current checklist items
+     * @return The layout containing the editablec checklist
+     */
+    public LinearLayout editChecklist(Checklist checklist) {
+        Context context = activity.getApplicationContext();
+        LinearLayout layout = new LinearLayout(context);
+        String[] items = checklist.getItems();
+        int limit = items.length;
+        int i;
+
+        // Setting up parent view
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        // Setting up each line
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(10, 10, 10, 10);
+        for (i = 0; i < limit; ++i) {
+            TextView cross = new TextView(context);
+            cross.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO Delete current item from checklist
+                }
+            });
+            cross.setText("X ");
+            cross.setTextSize(20);
+            cross.setTextColor(context.getResources().getColor(R.color.white));
+            EditText text = new EditText(context);
+            text.setText(items[i]);
+            text.setTextSize(20);
+            text.setTextColor(context.getResources().getColor(R.color.white));
+            LinearLayout line = new LinearLayout(context);
+            line.setLayoutParams(lp);
+            line.addView(cross);
+            line.addView(text);
+            layout.addView(line);
+        }
+
+        // Adding + button
+        Button buttonAdd = new Button(context);
+        buttonAdd.setText("+");
+        buttonAdd.setTextSize(20);
+        buttonAdd.setTextColor(context.getResources().getColor(R.color.white));
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Delete current item from checklist
+            }
+        });
+        layout.addView(buttonAdd);
+
+        return layout;
+    }
+
+    /**
      * Replaces the layout inside scroll to a new one
      *
      * @param scroll The parent view
@@ -197,8 +255,9 @@ public class ChecklistView {
         String outlet = title + "\n";
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
         LinearLayout layout = (LinearLayout) scroll.getChildAt(0);
+        int limit = layout.getChildCount();
 
-        for (int i = 0; i < layout.getChildCount(); ++i) {
+        for (int i = 0; i < limit; ++i) {
             LinearLayout line = (LinearLayout) layout.getChildAt(i);
             RadioButton button = (RadioButton) line.getChildAt(0);
             TextView text = (TextView) line.getChildAt(1);
