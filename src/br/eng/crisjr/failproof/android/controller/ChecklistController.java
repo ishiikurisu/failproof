@@ -38,4 +38,11 @@ public class ChecklistController {
     public void saveChecklist(String address, String checklist) {
         model.store(address, checklist);
     }
+
+    /**
+     * @return The current checklist.
+     */
+    public String getChecklist() {
+        return model.loadList();
+    }
 }

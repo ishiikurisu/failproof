@@ -53,10 +53,12 @@ public class ListActivity extends Activity {
 
     /**
      * Called when the edit/save button is pressed
-     *
-     * @param v
      */
     public void onClick_buttonEdit(View v) {
         // TODO Implement edition of list
+        String checklist = view.retrieveChecklist();
+        controller.saveChecklist(address, checklist);
+        view.toggleMode();
+        controller.setup();
     }
 }

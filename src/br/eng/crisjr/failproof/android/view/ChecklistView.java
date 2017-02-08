@@ -16,6 +16,7 @@ import br.eng.crisjr.failproof.android.model.entity.Checklist;
 public class ChecklistView {
     protected ListActivity activity;
     protected ChecklistController controller;
+    protected boolean editMode = false;
 
     public ChecklistView(ListActivity activity) {
         this.activity = activity;
@@ -35,21 +36,83 @@ public class ChecklistView {
     }
 
     /**
+     * Changes the current display mode of this view.
+     */
+    public void toggleMode() {
+        editMode = !editMode;
+    }
+
+    /**
+     * Gets the current edit mode.
+     */
+    public boolean getEditMode() {
+        return editMode;
+    }
+
+    /**
      * Draws the given checklist on screen.
      *
      * @param rawChecklist The string on android format.
      */
     public void setChecklist(String rawChecklist) {
         Checklist checklist = new Checklist(rawChecklist);
-        TextView title = (TextView) activity.findViewById(R.id.textChecklistTitle);
-        title.setText(checklist.getTitle());
-        title.setTextSize(30);
-        title.setTextColor(activity.getApplicationContext().getResources().getColor(R.color.white));
-        // TODO Make title appear on the center
-        LinearLayout layout = drawChecklist(checklist);
-        layout.setId(R.id.layoutChecklist);
+
+        // Setting edit/save button
+        // TODO Change edit/save button text depending
+
+        // Adding title
+        View title = createTitle(checklist);
+        LinearLayout header = (LinearLayout) activity.findViewById(R.id.layoutChecklistHeader);
+        header.removeAllViews();
+        header.addView(title);
+
+        // Adding items
+        // TODO Enable checklist items' edition
+        LinearLayout stuff = drawChecklist(checklist);
+        stuff.setId(R.id.layoutChecklist);
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
-        scroll = replaceScroll(scroll, layout);
+        scroll = replaceScroll(scroll, stuff);
+    }
+
+    /**
+     * Creates a title depending on the current edition mode.
+     *
+     * @return An appropriate title.
+     */
+    protected View createTitle(Checklist checklist) {
+        if (editMode) {
+            EditText edit = new EditText(activity.getApplicationContext());
+            edit.setText(checklist.getTitle());
+            edit.setTextSize(30);
+            edit.setTextColor(activity.getApplicationContext().getResources().getColor(R.color.white));
+            // TODO Make title appear on the center
+            return edit;
+        } else {
+            TextView title = new TextView(activity.getApplicationContext());
+            title.setText(checklist.getTitle());
+            title.setTextSize(30);
+            title.setTextColor(activity.getApplicationContext().getResources().getColor(R.color.white));
+            // TODO Make title appear on the center
+            return title;
+        }
+    }
+
+    /**
+     * @return Gets the current title
+     */
+    protected String getTitle() {
+        String title;
+        LinearLayout header = (LinearLayout) activity.findViewById(R.id.layoutChecklistHeader);
+
+        if (editMode) {
+            EditText edit = (EditText) header.getChildAt(0);
+            title = edit.getText().toString();
+        } else {
+            TextView text = (TextView) header.getChildAt(0);
+            title = text.getText().toString();
+        }
+
+        return title;
     }
 
     /**
@@ -130,8 +193,8 @@ public class ChecklistView {
      * @return The checklist on API format.
      */
     public String retrieveChecklist() {
-        TextView title = (TextView) activity.findViewById(R.id.textChecklistTitle);
-        String outlet = title.getText() + "\n";
+        String title = getTitle();
+        String outlet = title + "\n";
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
         LinearLayout layout = (LinearLayout) scroll.getChildAt(0);
 
