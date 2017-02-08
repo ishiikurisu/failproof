@@ -40,7 +40,7 @@ public class ListActivity extends Activity {
      * @param v the pressed radio button
      */
     public void radio_onClick(View v) {
-        String checklist = view.retrieveChecklist();
+        String checklist = view.retrieveChecklist(view.getEditMode());
         controller.saveChecklist(address, checklist);
     }
 
@@ -56,7 +56,7 @@ public class ListActivity extends Activity {
      */
     public void onClick_buttonEdit(View v) {
         // TODO Discover why it can't return to the regular mode
-        String checklist = view.retrieveChecklist();
+        String checklist = view.retrieveChecklist(view.getEditMode());
         controller.saveChecklist(address, checklist);
         view.toggleMode();
         controller.setup();

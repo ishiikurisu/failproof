@@ -1,6 +1,7 @@
 package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
+import android.hardware.camera2.params.StreamConfigurationMap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -245,14 +246,15 @@ public class ChecklistView {
         return scroll;
     }
 
+    // TODO Refactor these `retrieveChecklist` methods
+
     /**
      * Retrieves the checklist that is represented on the current screen.
      *
      * @return The checklist on API format.
      */
     public String retrieveChecklist() {
-        String title = getTitle();
-        String outlet = title + "\n";
+        String outlet = "";
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
         LinearLayout layout = (LinearLayout) scroll.getChildAt(0);
         int limit = layout.getChildCount();
@@ -269,4 +271,33 @@ public class ChecklistView {
 
         return outlet;
     }
+
+    /**
+     * Gets the current checklist depending on the current edit mode.
+     *
+     * @param editMode The current edit mode.
+     * @return The extracted checklist.
+     */
+    public String retrieveChecklist(boolean editMode) {
+        String title = getTitle();
+        String outlet = title + "\n";
+
+        if (!editMode) {
+            return outlet + retrieveChecklist();
+        }
+
+        ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
+        LinearLayout layout = (LinearLayout) scroll.getChildAt(0);
+        int limit = layout.getChildCount() - 1;
+
+        for (int i = 0; i < limit; ++i) {
+            LinearLayout line = (LinearLayout) layout.getChildAt(i);
+            EditText text = (EditText) line.getChildAt(1);
+            outlet += "-" + text.getText().toString();
+            outlet += "\n";
+        }
+
+        return outlet;
+    }
 }
+;
