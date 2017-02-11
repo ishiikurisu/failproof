@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -203,8 +204,22 @@ public class MainView {
      * @param address The checklist address
      */
     public void onDeleteNthTitle(String address) {
-        // TODO Add confirmation dialog
-        controller.deleteChecklist(address);
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("Are you sure?");
+        builder.setMessage("Do you want to delete this checklist?");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                controller.deleteChecklist(address);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
     }
 
     /**
@@ -218,7 +233,6 @@ public class MainView {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case CREATE_OPTION:
-                                // TODO Implement an action for creating checklists
                                 controller.createChecklist();
                                 break;
                             case DOWNLOAD_OPTION:
