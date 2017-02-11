@@ -59,7 +59,7 @@ public class ListActivity extends Activity {
      * Called when the edit/save button is pressed
      */
     public void onClick_buttonEdit(View v) {
-        // TODO Discover why it can't return to the regular mode
+        // TODO Change the name of this button depending on the edition mode
         String checklist = view.retrieveChecklist(view.getEditMode());
         controller.saveChecklist(address, checklist);
         view.toggleMode();

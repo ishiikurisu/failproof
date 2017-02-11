@@ -45,4 +45,17 @@ public class ChecklistController {
     public String getChecklist() {
         return model.loadList();
     }
+
+    /**
+     * Removes an item from the checklist
+     *
+     * @param rawChecklist the raw checklist
+     * @param index        the index of the item to be removed, 0-indexed
+     * @return the new checklist
+     */
+    public String removeItem(String rawChecklist, int index) {
+        return model.removeItem(rawChecklist, index);
+    }
+
+
 }

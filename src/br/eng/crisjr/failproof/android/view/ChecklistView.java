@@ -2,6 +2,7 @@ package br.eng.crisjr.failproof.android.view;
 
 import android.content.Context;
 import android.hardware.camera2.params.StreamConfigurationMap;
+import android.provider.Settings;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -69,7 +70,7 @@ public class ChecklistView {
         Checklist checklist = new Checklist(rawChecklist);
 
         // Setting edit/save button
-        // TODO Change edit/save button text depending
+        // TODO Change edit/save button text depending on mode
 
         // Adding title
         View title = createTitle(checklist);
@@ -240,7 +241,7 @@ public class ChecklistView {
         cross.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Delete current item from checklist
+                removeItem(index);
             }
         });
         cross.setText("X ");
@@ -255,6 +256,15 @@ public class ChecklistView {
         line.addView(cross);
         line.addView(text);
         return line;
+    }
+
+    /**
+     * Delete current item from checklist
+     */
+    public void removeItem(int index) {
+        String raw = retrieveChecklist(editMode);
+        raw = controller.removeItem(raw, index);
+        setChecklist(raw);
     }
 
     /**
@@ -285,7 +295,7 @@ public class ChecklistView {
     // TODO Refactor these `retrieveChecklist` methods
 
     /**
-     * Retrieves the checklist that is represented on the current screen.
+     * Retrieves the checklist that is represented on the current screen. Call `retrieveChecklist(editMode)  instead!
      *
      * @return The checklist on API format.
      */
@@ -300,9 +310,9 @@ public class ChecklistView {
             RadioButton button = (RadioButton) line.getChildAt(0);
             TextView text = (TextView) line.getChildAt(1);
 
+            outlet += "\n";
             outlet += (button.isChecked()) ? "*" : "-";
             outlet += text.getText().toString();
-            outlet += "\n";
         }
 
         return outlet;
@@ -315,8 +325,7 @@ public class ChecklistView {
      * @return The extracted checklist.
      */
     public String retrieveChecklist(boolean editMode) {
-        String title = getTitle();
-        String outlet = title + "\n";
+        String outlet = getTitle();
 
         if (!editMode) {
             return outlet + retrieveChecklist();
@@ -329,8 +338,7 @@ public class ChecklistView {
         for (int i = 0; i < limit; ++i) {
             LinearLayout line = (LinearLayout) layout.getChildAt(i);
             EditText text = (EditText) line.getChildAt(1);
-            outlet += "-" + text.getText().toString();
-            outlet += "\n";
+            outlet += "\n-" + text.getText().toString();
         }
 
         return outlet;
