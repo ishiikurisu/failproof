@@ -1,6 +1,8 @@
 package br.eng.crisjr.failproof.android.view;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
@@ -18,10 +20,16 @@ import br.eng.crisjr.failproof.android.controller.MainController;
 public class MainView {
     protected MainActivity activity = null;
     protected MainController controller = null;
-    public static int SAVE_REQUEST = 1;
-    public static int CANCEL_REQUEST = 2;
-    public static int EDIT_REQUEST = 4;
+    public static final int SAVE_REQUEST = 1;
+    public static final int CANCEL_REQUEST = 2;
+    public static final int EDIT_REQUEST = 4;
     protected boolean deleteMode = false;
+    public static final String[] OPTIONS = {
+            "Create checklist",
+            "Download checklist"
+    };
+    public static final int CREATE_OPTION = 0;
+    public static final int DOWNLOAD_OPTION = 1;
 
     public MainView(MainActivity activity) {
         this.activity = activity;
@@ -197,5 +205,27 @@ public class MainView {
     public void onDeleteNthTitle(String address) {
         // TODO Add confirmation dialog
         controller.deleteChecklist(address);
+    }
+
+    /**
+     * Asks what the user what to add to their checklist repository.
+     */
+    public void AskWhatToAdd() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("How to add this?")
+                .setItems(OPTIONS, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case CREATE_OPTION:
+                                // TODO Implement an action for creating checklists
+                                break;
+                            case DOWNLOAD_OPTION:
+                                controller.searchChecklists();
+                                break;
+                        }
+                    }
+                });
+        builder.create().show();
     }
 }
