@@ -37,6 +37,16 @@ public class ChecklistView {
     }
 
     /**
+     * Sets the edit mode
+     * @param mode the new mode
+     * @return the new set mode
+     */
+    public boolean setEditMode(boolean mode) {
+        editMode = mode;
+        return editMode;
+    }
+
+    /**
      * Changes the current display mode of this view.
      */
     public void toggleMode() {

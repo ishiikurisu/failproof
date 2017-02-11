@@ -109,8 +109,9 @@ public class MemoryAccess
      *
      * @param raw The raw data
      */
-    public void append(String raw) {
+    public String append(String raw) {
         String address = Memory.next(context);
         store(address, raw);
+        return address;
     }
 }

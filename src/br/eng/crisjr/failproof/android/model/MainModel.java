@@ -85,7 +85,7 @@ public class MainModel {
      *
      * @param template The checklist to be used as template in API descrition
      */
-    public void createEmptyChecklist(String template) {
-        memoryAccess.append(template);
+    public String createEmptyChecklist(String template) {
+        return memoryAccess.append(template);
     }
 }

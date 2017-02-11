@@ -65,8 +65,7 @@ public class MainController {
      * Creates an empty checklist.
      */
     public void createChecklist() {
-        model.createEmptyChecklist(Template.TEMPLATE_CHECKLIST);
-        // TODO Start checklist activity for editing this template checklist
-        updateView();
+        String address = model.createEmptyChecklist(Template.TEMPLATE_CHECKLIST);
+        view.startChecklistEdition(address);
     }
 }

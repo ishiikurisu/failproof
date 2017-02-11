@@ -243,4 +243,16 @@ public class MainView {
                 });
         builder.create().show();
     }
+
+    /**
+     * Starts another activity to edit the edition of the given checklist.
+     *
+     * @param address The checklist address.
+     */
+    public void startChecklistEdition(String address) {
+        Intent intent = new Intent(activity, ListActivity.class);
+        intent.putExtra("address", address);
+        intent.putExtra("mode", true);
+        activity.startActivityForResult(intent, EDIT_REQUEST);
+    }
 }

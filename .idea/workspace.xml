@@ -31,11 +31,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Adding a template checklist to memory">
+    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Adding a confirmation dialog before deleting checklists">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/br/eng/crisjr/failproof/android/MainActivity.class" afterPath="$PROJECT_DIR$/out/production/Failproof/br/eng/crisjr/failproof/android/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/MainModel.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/MainModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/MemoryAccess.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/MemoryAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
     </list>
     <ignored path="Failproof.iws" />
@@ -62,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+              <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
               <folding>
                 <element signature="e#1315#1316#0" expanded="true" />
                 <element signature="e#1355#1356#0" expanded="true" />
@@ -71,26 +77,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainModel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/MainModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.771836">
+              <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
               <folding>
                 <element signature="e#2005#2006#0" expanded="true" />
                 <element signature="e#2049#2050#0" expanded="true" />
-                <element signature="e#2253#2254#0" expanded="true" />
-                <element signature="e#2298#2299#0" expanded="true" />
+                <element signature="e#2255#2256#0" expanded="true" />
+                <element signature="e#2307#2308#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3493761">
-              <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="254" column="36" selection-start-line="254" selection-start-column="36" selection-end-line="254" selection-end-column="36" />
               <folding>
                 <element signature="e#7094#7095#0" expanded="true" />
                 <element signature="e#7161#7162#0" expanded="true" />
@@ -104,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
               <folding>
                 <element signature="e#1102#1103#0" expanded="true" />
                 <element signature="e#1139#1140#0" expanded="true" />
@@ -171,13 +177,13 @@
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/entity/Memory.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/ChecklistController.java" />
         <option value="$PROJECT_DIR$/res/layout/checklist.xml" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/constants/Template.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java" />
+        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/MemoryAccess.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/MainModel.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java" />
       </list>
     </option>
@@ -299,6 +305,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Failproof" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="failproof" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -731,12 +763,6 @@
       <option name="number" value="Default" />
       <updated>1468601212421</updated>
     </task>
-    <task id="LOCAL-00012" summary="Removing memory access from activity">
-      <created>1469744425717</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1469744425717</updated>
-    </task>
     <task id="LOCAL-00013" summary="Populating link activity">
       <created>1469813221303</created>
       <option name="number" value="00013" />
@@ -1025,7 +1051,13 @@
       <option name="project" value="LOCAL" />
       <updated>1486828314396</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Adding a confirmation dialog before deleting checklists">
+      <created>1486828805263</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1486828805264</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1081,7 +1113,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Preparing ground for next steps" />
     <MESSAGE value="Preparing ground for downloading checklists" />
     <MESSAGE value="Downloading all links to checklists" />
     <MESSAGE value="Downloading lists by link" />
@@ -1106,7 +1137,8 @@
     <MESSAGE value="Adding new items to a checklist" />
     <MESSAGE value="Preparing ground for creating empty checklists" />
     <MESSAGE value="Adding a template checklist to memory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding a template checklist to memory" />
+    <MESSAGE value="Adding a confirmation dialog before deleting checklists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding a confirmation dialog before deleting checklists" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1450,24 +1482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="240" column="29" selection-start-line="240" selection-start-column="29" selection-end-line="240" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/ChecklistModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1484,17 +1498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/MemoryAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="14" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
-          <folding>
-            <element signature="e#2600#2601#0" expanded="true" />
-            <element signature="e#2647#2648#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/entity/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.7967916">
@@ -1503,10 +1506,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/ChecklistView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5418895">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="31" />
+          <folding>
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1527#1528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/system/MemoryAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.771836">
+          <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/ListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
           <folding>
             <element signature="e#1315#1316#0" expanded="true" />
             <element signature="e#1355#1356#0" expanded="true" />
@@ -1514,10 +1546,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="254" column="36" selection-start-line="254" selection-start-column="36" selection-end-line="254" selection-end-column="36" />
+          <folding>
+            <element signature="e#7094#7095#0" expanded="true" />
+            <element signature="e#7161#7162#0" expanded="true" />
+            <element signature="class#7223:7374" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
           <folding>
             <element signature="e#1102#1103#0" expanded="true" />
             <element signature="e#1139#1140#0" expanded="true" />
@@ -1527,25 +1571,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/MainModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.771836">
+          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
           <folding>
             <element signature="e#2005#2006#0" expanded="true" />
             <element signature="e#2049#2050#0" expanded="true" />
-            <element signature="e#2253#2254#0" expanded="true" />
-            <element signature="e#2298#2299#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/view/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3493761">
-          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
-          <folding>
-            <element signature="e#7094#7095#0" expanded="true" />
-            <element signature="e#7161#7162#0" expanded="true" />
-            <element signature="class#7223:7374" expanded="false" />
+            <element signature="e#2255#2256#0" expanded="true" />
+            <element signature="e#2307#2308#0" expanded="true" />
           </folding>
         </state>
       </provider>

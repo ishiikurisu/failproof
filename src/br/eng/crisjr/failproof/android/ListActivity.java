@@ -30,6 +30,10 @@ public class ListActivity extends Activity {
         view = new ChecklistView(this);
         controller = new ChecklistController(model, view);
 
+        // Setting up correct mode
+        boolean mode = getIntent().getBooleanExtra("mode", false);
+        view.setEditMode(mode);
+
         // Setting up list
         controller.setup();
     }
