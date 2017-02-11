@@ -2,6 +2,7 @@ package br.eng.crisjr.failproof.android.controller;
 
 import android.widget.Toast;
 import br.eng.crisjr.failproof.android.model.MainModel;
+import br.eng.crisjr.failproof.android.model.constants.Template;
 import br.eng.crisjr.failproof.android.view.MainView;
 
 /**
@@ -57,6 +58,15 @@ public class MainController {
      */
     public void toggleMode() {
         view.switchMode();
+        updateView();
+    }
+
+    /**
+     * Creates an empty checklist.
+     */
+    public void createChecklist() {
+        model.createEmptyChecklist(Template.TEMPLATE_CHECKLIST);
+        // TODO Start checklist activity for editing this template checklist
         updateView();
     }
 }

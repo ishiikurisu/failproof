@@ -103,4 +103,14 @@ public class MemoryAccess
     public void remove(String address) {
         Memory.remove(context, address);
     }
+
+    /**
+     * Adds the given checklist to the next empty memory address
+     *
+     * @param raw The raw data
+     */
+    public void append(String raw) {
+        String address = Memory.next(context);
+        store(address, raw);
+    }
 }

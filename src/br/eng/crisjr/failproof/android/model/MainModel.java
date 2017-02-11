@@ -79,4 +79,13 @@ public class MainModel {
     public void removeList(String address) {
         memoryAccess.remove(address);
     }
+
+    /**
+     * Creates an empty checklist for edition
+     *
+     * @param template The checklist to be used as template in API descrition
+     */
+    public void createEmptyChecklist(String template) {
+        memoryAccess.append(template);
+    }
 }

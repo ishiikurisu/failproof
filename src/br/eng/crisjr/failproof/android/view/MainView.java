@@ -219,6 +219,7 @@ public class MainView {
                         switch (which) {
                             case CREATE_OPTION:
                                 // TODO Implement an action for creating checklists
+                                controller.createChecklist();
                                 break;
                             case DOWNLOAD_OPTION:
                                 controller.searchChecklists();
