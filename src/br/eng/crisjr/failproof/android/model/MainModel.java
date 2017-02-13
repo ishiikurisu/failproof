@@ -58,6 +58,9 @@ public class MainModel {
         if (stuff != null) {
             this.titles = web.toLists(stuff);
             this.addresses = web.toLinks(stuff);
+        } else {
+            this.titles = null;
+            this.addresses = null;
         }
     }
 
