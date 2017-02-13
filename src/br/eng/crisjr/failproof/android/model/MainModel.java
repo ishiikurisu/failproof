@@ -65,16 +65,6 @@ public class MainModel {
     }
 
     /**
-     * Loads a checklist from memory depending on its address.
-     *
-     * @param address The code to retrieve a list.
-     * @return The checklist on API format.
-     */
-    public String loadList(String address) {
-        return memoryAccess.loadList(address).toString();
-    }
-
-    /**
      * Deletes a checklist from memory
      *
      * @param address The checklist address on memory

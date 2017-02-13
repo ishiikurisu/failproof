@@ -8,10 +8,7 @@ import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import br.eng.crisjr.failproof.android.*;
 import br.eng.crisjr.failproof.android.controller.MainController;
 
@@ -47,7 +44,6 @@ public class MainView {
 
     public void switchMode() {
         deleteMode = !deleteMode;
-        // TODO Change X button background color
     }
 
     /**
@@ -254,5 +250,22 @@ public class MainView {
         intent.putExtra("address", address);
         intent.putExtra("mode", true);
         activity.startActivityForResult(intent, EDIT_REQUEST);
+    }
+
+    /**
+     * Updates the delete button background depending on the given mode.
+     *
+     * @param deleteMode the current deletion mode
+     */
+    public void updateDeleteButton(boolean deleteMode) {
+        Context context = activity.getApplicationContext();
+        Button button = (Button) activity.findViewById(R.id.buttonRandom);
+        int color = R.color.red;
+
+        if (deleteMode) {
+            color = R.color.pink;
+        }
+
+        button.setBackgroundColor(context.getResources().getColor(color));
     }
 }

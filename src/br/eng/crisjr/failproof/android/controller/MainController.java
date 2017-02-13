@@ -58,6 +58,7 @@ public class MainController {
      */
     public void toggleMode() {
         view.switchMode();
+        view.updateDeleteButton(view.getDeleteMode());
         updateView();
     }
 

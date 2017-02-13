@@ -213,9 +213,10 @@ public class ChecklistView {
 
         // Adding + button
         Button buttonAdd = new Button(context);
-        buttonAdd.setText("+");
+        buttonAdd.setText("Add...");
         buttonAdd.setTextSize(20);
         buttonAdd.setTextColor(context.getResources().getColor(R.color.white));
+        buttonAdd.setBackgroundColor(context.getResources().getColor(R.color.red));
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

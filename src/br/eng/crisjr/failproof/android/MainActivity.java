@@ -44,8 +44,6 @@ public class MainActivity
         this.view.AskWhatToAdd();
     }
 
-    // TODO Fix bug that happens when deleting the last checklist
-    // TODO Change background color when deletion mode is toggled
     /**
      * Callback to x button. Toggles the delete mode.
      * @param view I don't know why this argument is here either
