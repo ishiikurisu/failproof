@@ -5,6 +5,7 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.provider.Settings;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.*;
 import br.eng.crisjr.failproof.android.ListActivity;
 import br.eng.crisjr.failproof.android.R;
@@ -70,7 +71,8 @@ public class ChecklistView {
         Checklist checklist = new Checklist(rawChecklist);
 
         // Setting edit/save button
-        // TODO Change edit/save button text depending on mode
+        Button buttonEdit = (Button) activity.findViewById(R.id.buttonEdit);
+        buttonEdit.setText((editMode) ? "Save" : "Edit");
 
         // Adding title
         View title = createTitle(checklist);
@@ -79,7 +81,6 @@ public class ChecklistView {
         header.addView(title);
 
         // Adding items
-        // TODO Enable checklist items' edition
         LinearLayout stuff = (editMode) ? editChecklist(checklist) : drawChecklist(checklist);
         stuff.setId(R.id.layoutChecklist);
         ScrollView scroll = (ScrollView) activity.findViewById(R.id.scrollChecklist);
@@ -165,7 +166,6 @@ public class ChecklistView {
             button.setChecked(checked[i]);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
-                // TODO Call method from view, not from activity
                 public void onClick(View v) {
                     activity.radio_onClick(v);
                 }
@@ -217,6 +217,7 @@ public class ChecklistView {
         buttonAdd.setTextSize(20);
         buttonAdd.setTextColor(context.getResources().getColor(R.color.white));
         buttonAdd.setBackgroundColor(context.getResources().getColor(R.color.red));
+        buttonAdd.setLayoutParams(lp);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -274,6 +275,7 @@ public class ChecklistView {
     public void addItemToList() {
         LinearLayout stuff = (LinearLayout) activity.findViewById(R.id.layoutChecklist);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(10, 10, 10, 10);
         Context context = activity.getApplicationContext();
         int limit = stuff.getChildCount() - 1;
         LinearLayout line = createLine(context, "New item", lp, limit);

@@ -25,7 +25,7 @@ public class MainActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         MemoryAccess memoryAccess = new MemoryAccess(getApplicationContext());
-        memoryAccess.resetMemory();
+//        memoryAccess.resetMemory();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
