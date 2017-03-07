@@ -72,7 +72,7 @@ public class MemoryAccess
      * Adds a new checklist to memory
      * @param list the list to be saved as provided by the internet
      */
-    public void createList(String[] list) {
+    public void createList(String list) {
         Checklist checklist = new Checklist(list);
         Memory.store(this.context, checklist);
     }

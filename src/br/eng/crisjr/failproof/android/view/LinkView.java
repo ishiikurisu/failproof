@@ -36,7 +36,7 @@ public class LinkView {
      *
      * @param list A raw checklist, as described on API.
      */
-    public void updateStuff(String[] list) {
+    public void updateStuff(String list) {
         // TODO Make save button available only after list is downloaded
         ScrollView scrollView = createScroll(activity.getApplicationContext(), list);
         LinearLayout linearLayout = (LinearLayout) activity.findViewById(R.id.linearInfo);
@@ -52,7 +52,8 @@ public class LinkView {
      * @param list    The list, as provided by the internet
      * @return The scroll view with the layout and the
      */
-    protected ScrollView createScroll(Context context, String[] list) {
+    protected ScrollView createScroll(Context context, String rawList) {
+        String[] list = rawList.split("\n");
         ScrollView scroll = new ScrollView(context);
         LinearLayout stuff = new LinearLayout(context);
 
@@ -76,7 +77,7 @@ public class LinkView {
         lp.setMargins(10, 10, 10, 10);
         for (int i = 1; i < list.length; ++i) {
             TextView tv = new TextView(context);
-            tv.setText(list[i]);
+            tv.setText(list[i].substring(1));
             tv.setTextSize(20);
             tv.setTextColor(context.getResources().getColor(R.color.white));
             tv.setLayoutParams(lp);

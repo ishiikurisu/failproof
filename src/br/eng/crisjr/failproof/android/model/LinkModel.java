@@ -7,7 +7,7 @@ import br.eng.crisjr.failproof.android.model.system.MemoryAccess;
  */
 public class LinkModel {
     protected String link;
-    protected String[] list = null;
+    protected String list = null;
     protected MemoryAccess memory = null;
 
     public LinkModel(MemoryAccess access, String link) {
@@ -19,13 +19,13 @@ public class LinkModel {
         return this.link;
     }
 
-    public String[] getList() {
+    public String getList() {
         return this.list;
     }
 
-    public String[] setList(String[] list) {
+    public String setList(String[] list) {
         if (this.list == null) {
-            this.list = list;
+            this.list = list[0];
         }
         return getList();
     }

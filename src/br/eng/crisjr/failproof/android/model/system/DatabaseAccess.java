@@ -39,18 +39,18 @@ public class DatabaseAccess extends AsyncTask<String, Void, String[]> {
 
         switch (operation) {
             case GET_LINKS:
-                outlet = web.getLinks();
+                outlet = web.toLinks(web.getLists());
                 break;
 
             case GET_LISTS:
-                outlet = web.getLists();
+                outlet = web.toTitles(web.getLists());
                 break;
             case GET_STUFF:
-                outlet = web.getStuff();
+                outlet = web.getLists();
                 break;
 
             case GET_LIST:
-                outlet = web.getList(params[0]).split("\n");
+                outlet = new String[]{web.getList(params[0])};
                 break;
         }
 
