@@ -72,6 +72,7 @@ public class ChecklistModel {
         }
 
         // Converting data to valid output
+        // TODO Update this part so the checklist constructor accepts a String instead of String[]
         String[] filtered = new String[data.size()];
         for (int i = 0; i < filtered.length; i++) {
             filtered[i] = data.get(i);

@@ -14,7 +14,7 @@ public class SearchModel {
     }
 
     public void addLists(String[] rawData) {
-        this.lists = web.toLists(rawData);
+        this.lists = web.toTitles(rawData);
         this.links = web.toLinks(rawData);
     }
 
