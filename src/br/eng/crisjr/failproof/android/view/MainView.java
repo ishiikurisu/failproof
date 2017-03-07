@@ -149,9 +149,10 @@ public class MainView {
 
     protected TextView createButton(Context context, String info, boolean deleteMode) {
         TextView tv = new TextView(context);
-        String[] fields = info.split("\n"); // TODO Discover if this can be replaced by API tools
-        String address = fields[0];
-        String title = fields[1];
+        String[] fields = info.split(":"); // TODO Discover if this can be replaced by API tools
+        String title = fields[0];
+        String address = fields[1];
+
 
         if (deleteMode) {
             title = "Delete \"" + title + "\"?";

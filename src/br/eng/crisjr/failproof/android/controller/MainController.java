@@ -26,7 +26,7 @@ public class MainController {
      * Draws the current state on screen.
      */
     public void updateView() {
-        model.retrieveStuff();
+        model.setStuff(model.loadStuff());
         String[] titles = model.getTitles();
 
         if (titles == null) {

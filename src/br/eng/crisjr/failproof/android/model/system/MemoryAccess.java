@@ -61,7 +61,7 @@ public class MemoryAccess
             int limit = lists.length;
             outlet = new String[limit];
             for (int i = 0; i < limit; ++i) {
-                outlet[i] = codes[i] + "\n" + lists[i].getTitle();
+                outlet[i] = lists[i].getTitle() + ":" + codes[i];
             }
         }
 

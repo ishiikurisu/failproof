@@ -56,7 +56,7 @@ public class MainModel {
      */
     public void setStuff(String[] stuff) {
         if (stuff != null) {
-            this.titles = web.toLists(stuff);
+            this.titles = web.toTitles(stuff);
             this.addresses = web.toLinks(stuff);
         } else {
             this.titles = null;
