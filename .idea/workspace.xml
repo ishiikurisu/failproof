@@ -31,12 +31,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Fixing main activity">
+    <list default="true" id="90556322-8376-4ae4-8c1e-60a6202d9bcc" name="Default" comment="Fixing search activity">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Failproof/Failproof.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/ChecklistModel.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/ChecklistModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java" afterPath="$PROJECT_DIR$/src/br/eng/crisjr/failproof/android/model/SearchModel.java" />
     </list>
     <ignored path="Failproof.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -720,12 +718,6 @@
       <option name="number" value="Default" />
       <updated>1468601212421</updated>
     </task>
-    <task id="LOCAL-00020" summary="Displaying saved lists on main screen">
-      <created>1470015720421</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1470015720421</updated>
-    </task>
     <task id="LOCAL-00021" summary="Adapting memory to use only addresses">
       <created>1470016301017</created>
       <option name="number" value="00021" />
@@ -1014,7 +1006,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488845634174</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Fixing search activity">
+      <created>1488845868131</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1488845868131</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1070,7 +1068,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Previous version is implemented, but requiring some refactoring" />
     <MESSAGE value="Created MVC structure to ListActivity" />
     <MESSAGE value="Refactored app completely; now the work begins!" />
     <MESSAGE value="Improving some comments" />
@@ -1095,7 +1092,8 @@
     <MESSAGE value="Making the edition of checklists prettier" />
     <MESSAGE value="Adding new API before starting with new changes" />
     <MESSAGE value="Fixing main activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing main activity" />
+    <MESSAGE value="Fixing search activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing search activity" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
